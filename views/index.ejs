@@ -3,10 +3,406 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
+
+    <title>Real Estate</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+<style>
+  
+
+</style>
+
+
+
+
+
+
+
+
+  </head>
 <body>
-    <h1>Welcome to the Home Page</h1>
+    <header id="header">
+        <nav class="navbar navbar-expand-lg position-fixed">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="c:\Users\DELL\Downloads\download.png" alt="logo" class="w-50">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="index.ejs">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./about Us.ejs">ABOUT US</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCommunities" role="button" data-bs-toggle="dropdown" aria-expanded="false">COMMUNITIES <i class="fas "></i></a>
+                            <ul class="dropdown-menu navbarDropdown rounded-0" aria-labelledby="navbarDropdownCommunities">
+                                <li><a class="dropdown-item" href="./com.ejs">NEW CAIRO</a></li>
+                    
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProperties" role="button" data-bs-toggle="dropdown" aria-expanded="false">PROPERTIES <i class="fas "></i></a>
+                            <ul class="dropdown-menu navbarDropdown rounded-0" aria-labelledby="navbarDropdownProperties">
+                                <li><a class="dropdown-item" href="./Apartments.ejs">APARTMENTS</a></li>
+                                <li><a class="dropdown-item" href="./Villas.ejs">VILLAS</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#">SELL</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./contactUs.ejs">CONTACT US</a></li>
+                        <li class="nav-item"><a class="nav-link btn text-white bg-dark px-3 rounded-0" href="./Login1.ejs">LOGIN</a></li>
+                        <li class="nav-item"><a class="nav-link btn text-white bg-dark px-3 rounded-0" href="./Signup1.ejs">Sign up</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div id="main">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <video class="video" autoplay muted loop>
+                    <source src="https://dpe.xceeduae.com/wp-content/uploads/2024/02/video_20.mp4" type="video/mp4">
+                </video>
+                <div id="back"></div>
+                <div class="carousel-caption carousel1">
+                  <h5>Discover Property More Easily</h5>
+                  <div class="mt-5 d-flex">
+                    <input type="text" class="form-control search w-50 rounded-0" id="floatingInput" placeholder="Search...">
+                    <button class="btn btn-light btn-sm justify-content-md-end mx-2 px-3 rounded-0"><i class="fas fa-search"></i>Search</button>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div id="h">
+        <h1 style="color: goldenrod;">DISCOVER A PREMIUM</h1>
+    </div>
+
+      <div id="l">
+        <h1 >LIFESTYLE</h1>
+      </div>
+      <div class="sort my-4">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="dropdown mb-3">
+              <label for="bedroomsDropdown" class="form-label">Bedrooms</label>
+              <select class="form-select" id="bedroomsDropdown">
+                <option selected>Select Bedrooms</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5+</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="dropdown mb-3">
+              <label for="pricesDropdown" class="form-label">Prices</label>
+              <select class="form-select" id="pricesDropdown">
+                <option selected>Select Price Range</option>
+                <option value="100000">$100,000 - $200,000</option>
+                <option value="200000">$200,000 - $300,000</option>
+                <option value="300000">$300,000 - $400,000</option>
+                <option value="400000">$400,000 - $500,000</option>
+                <option value="500000">$500,000+</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="dropdown mb-3">
+              <label for="locationsDropdown" class="form-label">Locations</label>
+              <select class="form-select" id="locationsDropdown">
+                <option selected>Select Location</option>
+                <option value="FIFTH SETTLEMENT">FIFTH SETTLEMENT</option>
+                <option value="SHEIKH ZAYED">SHEIKH ZAYED</option>
+                <option value="ATTAMEYA HEIGHTS">ATTAMEYA HEIGHTS</option>
+                <option value="6-october">6-october</option>
+                <option value="Badya">Badya</option>
+              </select>
+            </div>
+           
+            <button class="my-button" onclick="sortProperties()" id="sort-data">SORT-DATA</button>
+          </div>
+        </div>
+      </div>
+
+
+
+      <main class="theMainvillas" id="theMainvillas">
+        <div class="property-box2" data-price="1000000" data-bedrooms="2" data-location="Attameya Heights">
+          <img class="imagee" src="https://hurghadiansproperty.com/wp-content/uploads/2023/11/acasa_mia_04.png" alt="">
+          <div class="property-content">
+            <h2 class="hdng">Attameya Heights</h2>
+            <p class="villparagraph">The first of its kind in the region, it brings together the best of a luxury villa, duplex, and master community.</p>
+            <a href="#" class="button avilla">Find out more <span class="material-symbols-outlined">arrow_right_alt</span></a>
+          </div>
+        </div>
+        <div class="property-box2" data-price="2000000" data-bedrooms="2" data-location="Sheikh Zayed">
+          <img class="imagee" src="https://realestate.eg/storage/posts/J7kfC2oWZcLTzjW6_thumb.jpg" alt="">
+          <div class="property-content">
+            <h2 class="hdng">Sheikh Zayed</h2>
+            <p class="villparagraph">The first of its kind in the region, it brings together the best of a luxury villa, duplex, and master community.</p>
+            <a href="#" class="button avilla">Find out more <span class="material-symbols-outlined">arrow_right_alt</span></a>
+          </div>
+        </div>
+        <div class="property-box2" data-price="4000000" data-bedrooms="3" data-location="Fifth Settlement">
+          <img class="imagee" src="https://aaf1bc7189.clvaw-cdnwnd.com/3e7c67d4c9462567f23b0b727d853874/200010494-567eb567ed/IMG_7750-HDR%20%28Copy%29-6.jpg?ph=aaf1bc7189" alt="">
+          <div class="property-content">
+            <h2 class="hdng">Fifth Settlement</h2>
+            <p class="villparagraph">340 reasons to elevate your quality of life. A rich sense of community and superlative waterfront living in one of the city’s most sought-after locations.</p>
+            <a href="#" class="button avilla">Find out more <span class="material-symbols-outlined">arrow_right_alt</span></a>
+          </div>
+        </div>
+        <div class="property-box2" data-price="5000000" data-bedrooms="5" data-location="mountain view">
+          <img class="imagee" src="https://realestate.eg/ckfinder/userfiles/images/properties-for-sale-in-privado/Building%20for%20sale%20in%20privado%20talaat%20mostafa.jpg" alt="">
+          <div class="property-content">
+            <h2 class="hdng">Mountain View</h2>
+            <p class="villparagraph">The first of its kind in the region, it brings together the best of a luxury villa, duplex, and master community.</p>
+            <a href="#" class="button avilla">Find out more <span class="material-symbols-outlined">arrow_right_alt</span></a>
+          </div>
+        </div>
+        <div class="property-box2" data-price="3000000" data-bedrooms="3" data-location="Badya">
+          <img class="imagee" src="https://egypttoday.com/wp-content/uploads/2016/06/9-La-Fontaine-copy.jpg" alt="">
+          <div class="property-content">
+            <h2 class="hdng">Badya</h2>
+            <p class="villparagraph">Specially designed 1, 1.5 and 2 bedroom apartments that offer you all-encompassing views of the city as you embark on an exquisite waterfront lifestyle.</p>
+            <a href="#" class="button avilla">Find out more <span class="material-symbols-outlined">arrow_right_alt</span></a>
+          </div>
+        </div>
+        <div class="property-box2" data-price="4400000" data-bedrooms="4" data-location="6-october">
+          <img class="imagee" src="https://elbayt.com/assets/uploads/images/16446/60178a5cfb29860514d72d2c7277e907/ph-new-cairo-palm-hills-39jpeg-1200x900.jpg" alt="">
+          <div class="property-content">
+            <h2 class="hdng">6-October</h2>
+            <p class="villparagraph">340 reasons to elevate your quality of life. A rich sense of community and superlative waterfront living in one of the city’s most sought-after locations.</p>
+            <a href="#" class="button avilla">Find out more <span class="material-symbols-outlined">arrow_right_alt</span></a>
+          </div>
+        </div>
+      </main>
+      <div class="dots-container">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+
+
+
+
+<!---------------------------------------------------------------------------------------->
+
+
+
+
+
+
+
+<!-------------------------------------------------------------->
+
+      <section class="client">
+        <div class="container">
+          <div class="heading">
+            <h2 class="title">What our client say</h2>
+          </div>
+          <div class="items">
+            <div class="card">
+              <img src=./img/client-1.jpg alt="client" />
+              <div class="stars">
+                <span class="active"><i class="fa fa-star"></i></span>
+                <span class="active"><i class="fa fa-star"></i></span>
+                <span class="active"><i class="fa fa-star"></i></span>
+                <span class="active"><i class="fa fa-star"></i></span>
+                <span class=""><i class="fa fa-star"></i></span>
+              </div>
+              <p>
+                The booking process was seamless, and the confirmation was
+                instant. I highly recommend Sa&Jo for hassle-free hotel bookings.
+              </p>
+            </div>
+            <div class="card">
+              <img src=c:\Users\DELL\Desktop\u\client-2.jpg alt="client" />
+              <div class="stars">
+                <span class="active"><i class="fa fa-star"></i></span>
+                <span class="active"><i class="fa fa-star"></i></span>
+                <span class="active"><i class="fa fa-star"></i></span>
+                <span class="active"><i class="fa fa-star"></i></span>
+                <span class="active"><i class="fa fa-star"></i></span>
+              </div>
+              <p>
+                The website provided detailed information about hotel, including
+                amenities, photos, which helped me make an informed decision.
+              </p>
+             
+            </div>
+            <div class="card">
+              <img src=c:\Users\DELL\Desktop\u\client-3.jpg alt="client" />
+              <div class="stars">
+                <span class="active"><i class="fa fa-star"></i></span>
+                <span class="active"><i class="fa fa-star"></i></span>
+                <span class="active"><i class="fa fa-star"></i></span>
+                <span class="active"><i class="fa fa-star"></i></span>
+                <span class=""><i class="fa fa-star"></i></span>
+              </div>
+              <p>
+                I was able to book a room within minutes, and the hotel exceeded
+                my expectations. I appreciate Sa&Jo's efficiency and reliability.
+              </p>  
+            
+            </div>
+            <button type="button" class="rate-us" onclick="window.location.href='rating.ejs'">Rate Us</button>
+          </div>
+        </div>
+        
+      </section>
+
+      
+    
+    
+
+      
+      <section class="reward ">
+        <div class="container">
+            <div class="content">
+                <p >100+ discount codes</p>
+                <h4  >Join rewards and discover amazing discounts on your booking</h4>
+                <a  id="join-us-btn"  class="my-button  animate">Join Rewards</a>
+                <hr class="hr-line ">
+                <div class="reward-c">
+                    <div class="reward-h3 ">
+                        <h3  class="">7.4% </h3>
+                        <h6 class=""> property Return Rate</h6>
+                    </div>
+                    <div class="vl"></div>
+                    <div>
+                        <h3 class="">3,856 </h3>
+                        <h6 class="">property in Sell and Rent</h6>
+                    </div>
+                    <div class="vl"></div>
+                    <div>
+                        <h3 class="">2,540</h3>
+                        <h6 class="">Daily Completed Transactions</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="message-box" class="message-box">
+            <p id="message-text"></p>
+        </div>
+
+
+
+
+
+
+
+
+      <h1 class="heading" style="color: goldenrod;">New</h1>
+      <h1 class="heading" style="color: black;">LAUNCHES</h1>
+      <div class="image-container">
+       
+        <img src="c:\Users\DELL\Downloads\After MVC\After MVC\public\images\1.jpg" alt="Image">
+        <div class="expand-box">
+          <div class="content">
+            <img src=c:\Users\DELL\Downloads\Creative-real-estate-logo-design-Graphics-29379269-1-removebg-preview.png alt="logo">
+          </div>
+          <div class="expanded-content" >
+            <p >Jacuzzi<i class="fa-solid fa-hot-tub-person  icon" ></i><div class="vl"></div></p>
+          <p>Kids Area<i class='fas fa-shapes'></i></i><div class="vl"></div></p>
+            <br>Relaxation <i class="fa-solid fa-mug-hot"></i><div class="vl"></div></p>
+          <p>Panoramic green views<i class="fa-solid fa-tree"></i><div class="vl"></div></p> 
+          </div>
+          <div  class="buttons"  >
+          <a href="" class="my-button " style="margin: 20px;"><i class="fas fa-phone"></i>Call </a>
+          <a href="" class="my-button" style="margin: 20px;"><i class="fa-solid fa-eye"></i>View Projects </a>
+         
+          </div>
+        </div>
+      </div>
+      
+
+
+
+
+
+      <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">news & Insights</a></li>
+                        <li><a href="#">payment options</a></li>
+                        <li><a href="#">contact us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>actions</h4>
+                    <ul>
+                        <li><a href="#">buy</a></li>
+                        <li><a href="#">sell</a></li>
+                        <li><a href="#">rent</a></li>
+                        <li><a href="#">mortgage</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.twitter.com/"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+
+
+
+<footer >
+  <div class="footer-container footer-container-expand-lg">
+    <div class="footer-buttons ">
+      <a class="btn enquiry-btn"  href="feedback.ejs">Feedback <i class="fa-solid fa-pen-to-square"></i></a>
+      <div class="vl"></div>
+      <a class="btn call-btn">CALL <i class="fas fa-phone"></i></a>
+      <div class="vl"></div>
+      <a class="btn whatsapp-btn" href="Schedule Meeting.ejs">Schedule Meeting <i class="fa-solid fa-calendar-days"></i></a>
+      <div class="vl"></div>
+      <a class="btn three-d" href="map.ejs">MAP <i class="fas fa-map-marker-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="js.js"></script>
+      
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
