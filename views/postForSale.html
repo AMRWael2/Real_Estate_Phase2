@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post For Sale</title>
+    <link rel="stylesheet" href="D:\Real_Estate_Phase2\public\css\postForSale.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+</head>
+<body>
+    <div class="container">
+        <h1>Post Your Home for Sale</h1>
+        <form id="myForm" name="postforsale" action="/submit-form" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="price">Price (L.E):</label>
+                <input type="number" id="price" name="price" min="10000" required>
+                <p>You can find the estimated value for your home using <a href="homeVestimator.html" target="_self">Home Validate Estimator</a></p>
+            </div>
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+            </div>
+            <div class="form-group">
+                <label for="image">Image:</label>
+                <input type="file" id="imageid" name="image" accept="image/jpeg,image/png,image/gif,video/mp4,video/webm,video/ogg" multiple required>
+                <span id="image-error" style="color: red;"></span>
+            </div>
+            <button type="submit">Post</button>
+        </form>
+        
+    </div>
+    
+    <script>
+      const form = document.getElementById('myForm');
+      const imageInput = document.getElementById('imageid');
+      const imageError = document.getElementById('image-error');
+    
+      form.addEventListener('submit', validateForm);
+    
+    function validateForm(event) {
+        const file = imageInput.files[0];
+        const fileSize = file.size;
+        const fileType = file.type;
+    
+        if (!['image/jpeg', 'image/png', 'image/gif', 'video/mp4', 'video/webm', 'video/ogg'].includes(fileType)) {
+          imageError.textContent = 'Only image and video files are allowed.';
+          event.preventDefault();
+          return false;
+        }
+    
+        if (fileSize > 1024 * 1024 * 50) { // 50MB limit
+          imageError.textContent = 'File size should not exceed 50MB.';
+          event.preventDefault();
+          return false;
+        }
+    
+        imageError.textContent = '';
+        return true;
+      }
+    </script>
+<script src="scripts/main.js"></script>
+</body>
+</html>
