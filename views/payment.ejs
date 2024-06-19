@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/payment.css">
+</head>
+    <div class="container">
+        <div class="inner-containers">
+          <div class="cols">
+            <h2>Address</h2>
+            <div class="div-alert">
+            <label for="pay-name">Name</label>
+            <label class="paysalert" id="pay-name-alert"></label>
+            </div>
+            <input type="text" id="pay-name" name="pay-name" placeholder="Amr Wael">
+            
+            <div class="div-alert">
+                <label for="pay-email">Email</label>
+                <label class="paysalert" id="pay-email-alert"></label>
+            </div>
+            <input type="text" id="pay-email" name="pay-email" placeholder="Amr@gmail.com">
+            
+            <div class="div-alert">
+                <label for="pay-adress">Address</label>
+                <label class="paysalert" id="pay-adress-alert"></label>
+            </div>
+            <input type="text" id="pay-adress" name="pay-adress" placeholder="5 abbas el-akad street">
+            <div class="div-alert">
+                <label for="tel-number">Telephone</label>
+                <label class="paysalert" id="tel-number-alert"></label>
+            </div>
+            <input type="text" id="tel-number" name="tel-number" placeholder="01014584768">
+            
+            <div class="div-alert">
+                <label for="pay-city">City</label>
+                <label class="paysalert" id="pay-city-alert"></label>
+            </div>
+            <input type="text" id="pay-city" name="pay-city" placeholder="Cairo">
+          </div>
+          <div class="cols">
+            <div class="div-alert">
+            <h2>Price</h2>
+            <div class="some-class"style="display: grid;margin-left:20px;">
+                
+            <div class="div-alert">
+                <input style="vertical-align: middle;" type="radio" name="pay-price" id="pay-price-1" checked>
+                <label class="pay-price" for="pay-price-1">Under payment:<span style="margin-right:10px;" id="pay-price1">500$</span>Montly Payment:<span style="margin-right:10px;" id="pay-price11">500$</span>for 3 months</label>
+            </div>
+            <div class="div-alert">
+                <input style="vertical-align: middle;" type="radio" name="pay-price" id="pay-price-2">
+                <label class="pay-price" for="pay-price-2">Under payment:<span style="margin-right:10px;" id="pay-price2">500$</span>Montly Payment:<span style="margin-right:10px;" id="pay-price22">500$</span>for 8 months</label>
+            </div>
+            <div class="div-alert">
+                <input style="vertical-align: middle;" type="radio" name="pay-price" id="pay-price-3">
+                <label class="pay-price" for="pay-price-3">Under payment:<span style="margin-right:10px;" id="pay-price3">500$</span>Montly Payment:<span style="margin-right:10px;" id="pay-price33">500$</span>for 12 months</label>
+                </div>
+            </div>
+            </div>
+            <label>Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+            </div>
+            
+            <div class="div-alert">
+                <label for="pay-cname">Name on Card</label>
+                <label class="paysalert" id="pay-cname-alert"></label>
+            </div>
+            <input type="text" id="pay-cname" name="pay-cname" placeholder="Amr Wael">
+            
+            <div class="div-alert">
+                <label for="pay-cnum">Credit card number</label>
+                <label class="paysalert" id="pay-cnum-alert"></label>
+            </div>
+            <input type="text" id="pay-cnum" name="pay-cnum" placeholder="1111-2222-3333-4444">
+            
+            <div class="div-alert">
+                <label for="expmonth">Exp Month</label>
+                <label class="paysalert" id="expmonth-alert"></label>
+            </div>
+            <input type="text" id="expmonth" name="expmonth" placeholder="September">
+            <div class="inner-containers">
+              <div class="cols">
+                <div class="div-alert">
+                    <label for="expyear">Exp. Year</label>
+                    <label class="paysalert" id="expyear-alert"></label>
+                </div>
+                <input type="text" id="expyear" name="expyear" placeholder="2028">
+              </div>
+              <div class="cols">
+                <div class="div-alert">
+                    <label for="cvv">CVV</label>
+                    <label class="paysalert" id="cvv-alert"></label>
+                </div>
+                <input type="text" id="cvv" name="cvv" placeholder="352">
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <input type="button" value="checkout" class="btn" onclick="return payvalidate()">
+    </div>
+    <script src="/js/payment.js"></script>
+</body>
+</html>

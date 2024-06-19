@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate</title>
+    <link rel="stylesheet" href="/css/stylecom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/page.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="/css/stylecom.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+<main>
+    <div id="start">
+        <button id="leftbutton" onclick="return decimage()"><</button>
+        <button id="rightbutton" onclick="return incimage()">></button>
+    </div>
+    <div style="display: flex;">
+    <div style="width:70%">
+    <h1 id="makan"></h1>
+</div>
+<div style="width:30%">
+    <h1>Other suggestions</h1>
+    </div>
+</div>
+    <div id="secoundmaindiv">
+    <div id="contentdiv">
+        <div style="display: grid;max-width:150%">
+            <img style="max-width:80px" src="https://www.sobharealty.com/media/hq1mgpy1/group-28552-2.svg">
+            <h1>Description</h1>
+            <p id="pagedetails" style="margin-top:0px;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore tenetur incidunt eum aliquam in, delectus velit molestiae et, fuga distinctio perspiciatis nesciunt recusandae, omnis dolor alias. Quis consequuntur odio fugiat!</p>
+            <h1 style="margin-top:0px;">Details</h1>
+            <div style="display:flex;margin-top:0px;">
+                <div style="display:grid">
+            <p><img class="icon"  src="/images/icon/bed.jpg">Bedrooms:<span id="bed"></span></p>
+            <p><img class="icon" src="/images/icon/toilet.jpg">Toilets:<span id="toilet"></span></p>
+        </div>
+        <div style="display:grid;margin-left:5%;">
+            <p><img class="icon" src="/images/icon/living.jpg">Livingrooms:<span id="living"></span></p>
+            <p><img class="icon" src="/images/icon/garden.jpg">Garden:<span id="garden"></span></p>
+        </div>
+            <div style="display:grid;margin-left:5%;">
+            <p><img class="icon"  src="/images/icon/swim.jpg">Swimmingpools:<span id="Swim"></span></p>
+            </div>
+        </div>
+        </div>
+        <div style="display: grid;margin-left:10%;margin-top:50px;border-left:1px double black;padding-left:20px;max-width:100%">
+        <div style="display:flex;">
+        <p>Price:<span id="price"></span><span style="font-weight: bold;"></span></p>
+        <a id="paymentancor" href="/payment">Pay now</a>
+    </div>
+        <p style="margin:5px 0px 0px 0px">Location</p>
+        <div id="acon">
+           <a id="loc" target="_blank"><img style="max-width:100%;height:100%;" src="/images/locationimg.png"></a>
+        </div>
+    </div>
+    </div>
+    <div id="contentdiv2">
+        <div id="leftandright" style="display:flex;margin-top:150px;">
+        <button style="height:30px;max-width:20px" id="leftbutton2" onclick="return decimage2()"><</button>
+        <button style="height:30px;max-width:20px" id="rightbutton2" onclick="return incimage2()">></button>
+        </div>
+        <div style="margin-top:10%;">
+            <h3 class="kalam" id="makan2"></h3>
+            <div style="display: flex;">
+            <h4 class="kalam">price<h3 class="kalam" style="margin-left:10px;" id="price2"></h3><h3 style="color:white;margin-left:10px;vertical-align:bottom;"></h3></h4>
+        </div>
+            <a class="kalam" id="anchortag">click for more<span class="material-symbols-outlined"> arrow_right_alt </span></a>
+        </div>
+    </div>
+</div>
+</main>
+</body>
+<script src="/js/page.js"></script>
+</html>
