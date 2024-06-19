@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post For Sale</title>
-    <link rel="stylesheet" href="D:\Real_Estate_Phase2\public\css\postForSale.css">
+    <link rel="stylesheet" href="/css/postForSale.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 </head>
 <body>
     <div class="container">
-        <h1>Post Your Home for Sale</h1>
+        <h1><a href="/post-for-sale">Post Your Home for Sale</a></h1>
         <form id="myForm" name="postforsale" action="/submit-form" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="title">Title:</label>
@@ -35,7 +35,6 @@
             </div>
             <button type="submit">Post</button>
         </form>
-        
     </div>
     
     <script>
@@ -45,27 +44,27 @@
     
       form.addEventListener('submit', validateForm);
     
-    function validateForm(event) {
-        const file = imageInput.files[0];
-        const fileSize = file.size;
-        const fileType = file.type;
-    
-        if (!['image/jpeg', 'image/png', 'image/gif', 'video/mp4', 'video/webm', 'video/ogg'].includes(fileType)) {
-          imageError.textContent = 'Only image and video files are allowed.';
-          event.preventDefault();
-          return false;
-        }
-    
-        if (fileSize > 1024 * 1024 * 50) { // 50MB limit
-          imageError.textContent = 'File size should not exceed 50MB.';
-          event.preventDefault();
-          return false;
-        }
-    
-        imageError.textContent = '';
-        return true;
+      function validateForm(event) {
+          const file = imageInput.files[0];
+          const fileSize = file.size;
+          const fileType = file.type;
+      
+          if (!['image/jpeg', 'image/png', 'image/gif', 'video/mp4', 'video/webm', 'video/ogg'].includes(fileType)) {
+            imageError.textContent = 'Only image and video files are allowed.';
+            event.preventDefault();
+            return false;
+          }
+      
+          if (fileSize > 1024 * 1024 * 50) { // 50MB limit
+            imageError.textContent = 'File size should not exceed 50MB.';
+            event.preventDefault();
+            return false;
+          }
+      
+          imageError.textContent = '';
+          return true;
       }
     </script>
-<script src="scripts/main.js"></script>
+    <script src="/scripts/main.js"></script>
 </body>
 </html>

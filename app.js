@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const fileUpload = require('express-fileupload');
 const indexRoutes = require('./routes/index');
 const path = require('path');
-const PostForSale=require("./models/PostForSale")
+const PostForSale=require("./models/PostForSale");
+const adminRoutes = require('./routes/admin');
 
 const mongoURL='mongodb+srv://mn6220586:ru3SjDvePCY2mgIZ@real-estate.gksxram.mongodb.net/all-data?retryWrites=true&w=majority&appName=Real-Estate'
 
@@ -15,15 +16,25 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(fileUpload());
 
-// Use routes
-app.use('/', indexRoutes);
 
 // Serve static files
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/css', express.static(path.join(__dirname, 'public/css')));
+app.use('/img', express.static(path.join(__dirname, 'public/img')));
+app.use('/js', express.static(path.join(__dirname, 'public/js')));
 
-// Serve the HTML file
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views', 'postforsale.html'));
+
+// Set view engine
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+// Use routes
+app.use('/', indexRoutes);
+app.use('/admin', adminRoutes);
+
+// Serve the form page
+app.get('/post-for-sale', (req, res) => {
+    res.render('postForSale');
 });
 
 

@@ -3,6 +3,13 @@ const path = require('path');
 const PostForSale = require('../models/PostForSale');
 const router = express.Router();
 
+
+// Root route to render the main page
+router.get('/', (req, res) => {
+    res.render('postforsale');
+});
+
+
 // POST route for form submission
 router.post('/', async (req, res) => {
     if (!req.files || Object.keys(req.files).length === 0) {
@@ -18,14 +25,14 @@ router.post('/', async (req, res) => {
             for (let file of req.files.image) {
                 const uploadPath = path.join(__dirname, '../uploads/', file.name);
                 await file.mv(uploadPath);
-                images.push(uploadPath);
+                images.push(`/uploads/${file.name}`); // Store relative path
             }
         } else {
             // Single file uploaded
             const file = req.files.image;
             const uploadPath = path.join(__dirname, '../uploads/', file.name);
             await file.mv(uploadPath);
-            images.push(uploadPath);
+            images.push(`/uploads/${file.name}`); // Store relative path
         }
 
         const newPost = new PostForSale({
@@ -33,7 +40,7 @@ router.post('/', async (req, res) => {
             description,
             price,
             location,
-            images
+            images // Save image paths in the database
         });
 
         await newPost.save();

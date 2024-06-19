@@ -11,6 +11,7 @@
   "description": "",
   "dependencies": {
     "ajax": "^0.0.4",
+    "ejs": "^3.1.10",
     "express": "^4.19.2",
     "express-fileupload": "^1.5.0",
     "jquery": "^3.7.1",
