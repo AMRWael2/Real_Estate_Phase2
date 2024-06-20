@@ -1,21 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const fileUpload = require('express-fileupload');
-const indexRoutes = require('./routes/index');
 const path = require('path');
-const PostForSale=require("./models/PostForSale");
-const adminRoutes = require('./routes/admin');
-
-const mongoURL='mongodb+srv://mn6220586:ru3SjDvePCY2mgIZ@real-estate.gksxram.mongodb.net/all-data?retryWrites=true&w=majority&appName=Real-Estate'
-
+const livereload = require('livereload');
+const connectLiveReload = require('connect-livereload');
 
 const app = express();
+const port = 3000;
 
-// Use middleware
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-app.use(fileUpload());
-
+// Middleware for live reload
+app.use(connectLiveReload());
 
 // Serve static files
 app.use(express.static(path.join(__dirname, 'public')));
@@ -23,65 +16,89 @@ app.use('/css', express.static(path.join(__dirname, 'public/css')));
 app.use('/img', express.static(path.join(__dirname, 'public/img')));
 app.use('/js', express.static(path.join(__dirname, 'public/js')));
 
-
 // Set view engine
+app.set('views', './views');
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
 
-// Use routes
-app.use('/', indexRoutes);
-app.use('/admin', adminRoutes);
+// Routes
+app.get('/', (req, res) => {
+    res.render('index', { title: 'Real Estate' });
+});
+app.get('/index.ejs', (req, res) => {
+    res.render('index'); // Render index.ejs
+});
+app.get('/', (req, res) => {
+    res.render('Dashboard2'); // Render index.ejs
+});
 
-// Serve the form page
-app.get('/post-for-sale', (req, res) => {
-    res.render('postForSale');
+app.get('/com.ejs', (req, res) => {
+    res.render('com'); // Render com.ejs
+});
+app.get('/Apartments.ejs', (req, res) => {
+    res.render('Apartments', { title: 'Real Estate' }); // Render com.ejs
+});
+app.get('/contactUs.ejs', (req, res) => {
+    res.render('contactUs'); // Render com.ejs
+});
+app.get('/Login1.ejs', (req, res) => {
+    res.render('Login1'); // Render com.ejs
+});
+app.get('/Signup1.ejs', (req, res) => {
+    res.render('Signup1'); // Render com.ejs
+});
+app.get('/Villas.ejs', (req, res) => {
+    res.render('Villas', { title: 'Real Estate' }); // Render com.ejs
+});
+app.get('/aboutUs.ejs', (req, res) => {
+    res.render('aboutUs'); // Render com.ejs
+});
+app.get('/map.ejs', (req, res) => {
+    res.render('map'); // Render com.ejs
+});
+app.get('/ScheduleMeeting.ejs', (req, res) => {
+    res.render('ScheduleMeeting'); // Render com.ejs
+});
+app.get('/feedback.ejs', (req, res) => {
+    res.render('feedback'); // Render com.ejs
+});
+
+app.get('/sell.ejs', (req, res) => {
+    res.render('sell'); // Render com.ejs
+});
+app.get('/sellRequests.ejs', (req, res) => {
+    res.render('sellRequests'); // Render com.ejs
+});
+app.get('/postForSale.ejs', (req, res) => {
+    res.render('postForSale'); // Render index.ejs
 });
 
 
-app.post('/submit-form', (req, res) => {
-  const { title, description, price, location } = req.body;
 
-  // Handle file upload if an image is included
-  let imageFile = req.files.image; // Assuming input file field is named 'image'
 
-  // Create a new instance of PostForSale model
-  const newPost = new PostForSale({
-      title,
-      description,
-      price: parseInt(price), // Convert price to number
-      location,
-      // Store file path in the database 
-      imagePath: imageFile ? `/uploads/${imageFile.name}` : null 
-  });
 
-  // Save to MongoDB
-  newPost.save()
-      .then(savedPost => {
-          // Move the uploaded file to a specific directory
-          if (imageFile) {
-              imageFile.mv(path.join(__dirname, 'uploads', imageFile.name), (err) => {
-                  if (err) {
-                      console.error('Error saving image:', err);
-                      return res.status(500).send('Error saving image');
-                  }
-                  console.log('Image saved successfully');
-                  res.send('Post saved successfully');
-              });
-          } else {
-              res.send('Post saved successfully (without image)');
-          }
-      })
-      .catch(err => {
-          console.error('Error saving post:', err);
-          res.status(500).send('Error saving post');
-      });
-});
 
-// Connect to MongoDB and start the server
-mongoose.connect(mongoURL)
-.then(() => {
-  console.log('MongoDB Connected');
-  app.listen(3000, () => console.log('Server running on port 3000'));
+
+
+// MongoDB connection
+mongoose.connect("mongodb+srv://RealStateProject:realstate1@databrs.fu7gdx6.mongodb.net/?retryWrites=true&w=majority&appName=DATABRS", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
 })
-.catch(err => console.error(err));
-   
+    .then(() => {
+        const server = app.listen(port, () => {
+            console.log(`Server is running at http://localhost:${port}`);
+        });
+
+        // Setting up livereload
+        const liveReloadServer = livereload.createServer();
+        liveReloadServer.watch(path.join(__dirname, 'public'));
+
+        liveReloadServer.server.once("connection", () => {
+            setTimeout(() => {
+                liveReloadServer.refresh("/");
+            }, 100);
+        });
+    })
+    .catch((err) => {
+        console.log(err);
+    });
