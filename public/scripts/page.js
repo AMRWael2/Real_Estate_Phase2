@@ -1,4 +1,6 @@
-
+function bufferToBase64(buffer) {
+    return buffer.toString('base64');
+}
 const allobjects=[
     {id:"1",bed:"3",toilets:"2",living:"1",garden:1,swim:0,location:"https://www.google.com/maps/place/Emaar+Mivida+Compound/@30.0102788,31.5353318,17z/data=!3m1!4b1!4m6!3m5!1s0x1458222742926025:0x8f18a8273e8f9068!8m2!3d30.0102788!4d31.5379067!16s%2Fg%2F11bzq369s9?entry=ttu",pricet:"3,500,255EGP",price:3500255,makan:"Attameya Heights",details:"Book your free invitation now to the most important and largest real estate exhibition in the Middle East, The Address Property Show, in its second session, in the presence of more than 25 real estate developers with exclusive offers and annual discounts of up to 50% for 4 days, starting from Wednesday 8/5 to Saturday"},
     {id:"2",bed:"5",toilets:"3",living:"2",garden:1,swim:1,location:"https://www.google.com/maps/search/Hyde+park+appartments/@30.0484216,31.4635438,12.55z?entry=ttu",pricet:"5,690,000EGP",price:5690000,makan:"Sheikh Zayed",details:"Sheikh Zayed Apartments typically refer to residential complexes or buildings named after Sheikh Zayed bin Sultan Al Nahyan, the founding father of the United Arab Emirates. These apartments are commonly found in the UAE, particularly in cities like Abu Dhabi and Dubai, where his legacy is highly revered."},
@@ -30,26 +32,6 @@ function decimage(){
        i=n;
     checkimg();
 }
-function incimage2(){
-    i2++;
-    if(i2>n2)
-       i2=1;
-    if(i2==b)
-    {
-        i2++;
-    }
-    checkimg2();
-}
-function decimage2(){
-    i2--;
-    if(i2==b)
-    {
-        i2--;
-    }
-    if(i2<1)
-       i2=n2;
-    checkimg2();
-}
 function getbutton(){
     u='/images/images'+b+'/image1.jpg';
     document.getElementById("start").style.backgroundImage=`url(${u})`;
@@ -60,35 +42,16 @@ function getbutton(){
     }
     let mainim='/images/mainimages/image'+i2+'.jpg';
     document.getElementById("contentdiv2").style.backgroundImage=`url(${mainim})`;
-    for(let y in allobjects)
+    for(let y in arr)
     {
-       if(allobjects[y].id==i2)
-        {
-            document.getElementById("makan2").innerHTML=allobjects[y].makan;
-            document.getElementById("price2").innerHTML=allobjects[y].pricet;
-        }
+        document.getElementById("makan2").innerHTML=allobjects[y].name;
+        document.getElementById("price2").innerHTML=allobjects[y].price;
     }
-    document.getElementById("anchortag").href="/page?btn="+i2;
-    for(let x in allobjects)
-    {
-        if(allobjects[x].id==b)
-        {
-            document.getElementById("pagedetails").innerHTML=allobjects[x].details;
-            document.getElementById("bed").innerHTML=allobjects[x].bed;
-            document.getElementById("toilet").innerHTML=allobjects[x].toilets;
-            document.getElementById("living").innerHTML=allobjects[x].living;
-            document.getElementById("garden").innerHTML=allobjects[x].garden;
-            document.getElementById("Swim").innerHTML=allobjects[x].swim;
-            document.getElementById("loc").href=allobjects[x].location;
-            document.getElementById("paymentancor").href="/payment?price="+allobjects[x].price;
-            document.getElementById("price").innerHTML=allobjects[x].pricet;
-            document.getElementById("makan").innerHTML=allobjects[x].makan;
-            if(allobjects[x].garden==0)
-            document.getElementById("garden").innerHTML="None";
-            if(allobjects[x].swim==0)
-            document.getElementById("Swim").innerHTML="None";
-        }
-    }
+    document.getElementById("anchortag").href="/page.ejs?btn="+i2;
+    if(allobjects[x].garden =='0')
+        document.getElementById("garden").innerHTML="None";
+    if(allobjects[x].swim =='0')
+        document.getElementById("Swim").innerHTML="None";
     
 }
 function checkimg(){
@@ -109,30 +72,37 @@ function checkimg(){
         document.getElementById("start").style.backgroundImage=`url(${u})`;
     }
 }
+
+
+
+
+
+
+
+function incimage2(){
+    i2++;
+    if(i2>n2)
+       i2=1;
+    if(i2==b)
+    {
+        i2++;
+    }
+    checkimg2();
+}
+function decimage2(){
+    i2--;
+    if(i2==b)
+    {
+        i2--;
+    }
+    if(i2<1)
+       i2=n2;
+    checkimg2();
+}
 function checkimg2(){
-    let u='/images/mainimages';
-    for(let y in allobjects)
-    {
-       if(allobjects[y].id==i2)
-        {
-            document.getElementById("makan2").innerHTML=allobjects[y].makan;
-            document.getElementById("price2").innerHTML=allobjects[y].t;
-        }
-    }
-    document.getElementById("anchortag").href="/page?btn="+i2;
-    if(i2==1)
-    {
-        u+='/image1.jpg';
-        document.getElementById("contentdiv2").style.backgroundImage=`url(${u})`;
-    }
-    if(i2==2)
-    {
-        u+='/image2.jpg';
-        document.getElementById("contentdiv2").style.backgroundImage=`url(${u})`;
-    }
-    if(i2==3)
-    {
-        u+='/image3.jpg';
-        document.getElementById("contentdiv2").style.backgroundImage=`url(${u})`;
-    }
+    document.getElementById("makan2")=arr[i2].name;
+    document.getElementById("price2").innerHTML=arr[i2].price;
+    document.getElementById("anchortag").href="/page.ejs?btn="+i2;
+    const base64Image = bufferToBase64(arr[i].image.data);
+    document.getElementById("contentdiv2").style.backgroundImage="data:<%= arr[i].image.contentType %>;base64,<%= base64Image %>";
 }
