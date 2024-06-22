@@ -4,11 +4,13 @@ const PostForSale = require('../models/PostForSale');
 const router = express.Router();
 
 
-// Root route to render the main page
 router.get('/', (req, res) => {
     res.render('postforsale');
 });
 
+router.get('/', (req, res) => {
+    res.render('feedbackForm'); 
+});
 
 // POST route for form submission
 router.post('/', async (req, res) => {
@@ -40,7 +42,7 @@ router.post('/', async (req, res) => {
             description,
             price,
             location,
-            images // Save image paths in the database
+            images
         });
 
         await newPost.save();
@@ -48,6 +50,33 @@ router.post('/', async (req, res) => {
     } catch (error) {
         console.error('Error saving post:', error);
         res.status(500).send('Server error');
+    }
+});
+
+router.post('/submit-form', async (req, res) => {
+    const { type, email, name, feedbackType, comment } = req.body;
+
+    // Validate input
+    if (!type || !email || !feedbackType || !comment) {
+        return res.status(400).send('All fields are required.');
+    }
+
+    try {
+        // Create new feedback document using Feedback model
+        const newFeedback = new Feedback({
+            type,
+            email,
+            name,
+            feedbackType,
+            comment
+        });
+
+        // Save feedback to MongoDB
+        await newFeedback.save();
+        res.status(201).send('Feedback submitted successfully!');
+    } catch (error) {
+        console.error('Error saving feedback:', error);
+        res.status(500).send('Internal Server Error');
     }
 });
 
