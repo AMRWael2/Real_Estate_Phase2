@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reward Form</title>
+<style>
+  /* Reward Form Styles */
+  .reward-form {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+  }
+
+  .reward-form .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  .reward-form .form-group {
+    margin-bottom: 20px;
+  }
+
+  .reward-form label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+
+  .reward-form input[type="text"],
+  .reward-form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+
+  .reward-form .btn {
+    background-color: rgb(0, 0, 0);
+    color: rgb(253, 253, 253);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    
+  }
+  
+ 
+    
+ .reward-form .btn:hover {
+  background-color: rgb(255, 255, 255);
+    color: rgb(1, 1, 1);
+
+}
+
+
+</style>
+</head>
+<body>
+  <section class="reward-form">
+    <div class="container">
+      <h2>Join Rewards</h2>
+      <form action="#" method="POST">
+        <div class="form-group">
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" name="fullname" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="text" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn">Join Rewards</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</body>
+</html>
+
+
+
+

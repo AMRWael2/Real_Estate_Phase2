@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="postforsale">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post For Sale</title>
     <link rel="stylesheet" href="/css/postForSale.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 </head>
 <body>
-    <div class="container">
+    <%- include('partials/header', { title: title }) %>
+    <div class="postcontainer">
         <h1><a href="/post-for-sale">Post Your Home for Sale</a></h1>
         <form id="myForm" name="postforsale" action="/submit-form" method="post" enctype="multipart/form-data">
             <div class="form-group">
@@ -22,7 +21,7 @@
             <div class="form-group">
                 <label for="price">Price (L.E):</label>
                 <input type="number" id="price" name="price" min="10000" required>
-                <p>You can find the estimated value for your home using <a href="homeVestimator.html" target="_self">Home Validate Estimator</a></p>
+                <p>You can find the estimated value for your home using <a href="./homeVestimator.ejs" target="_self">Home Validate Estimator</a></p>
             </div>
             <div class="form-group">
                 <label for="location">Location:</label>
@@ -33,10 +32,9 @@
                 <input type="file" id="imageid" name="image" accept="image/jpeg,image/png,image/gif,video/mp4,video/webm,video/ogg" multiple required>
                 <span id="image-error" style="color: red;"></span>
             </div>
-            <button type="submit">Post</button>
+            <button type="submit" id="postbtn">Post</button>
         </form>
     </div>
-    
     <script>
       const form = document.getElementById('myForm');
       const imageInput = document.getElementById('imageid');
@@ -66,5 +64,7 @@
       }
     </script>
     <script src="/scripts/main.js"></script>
+    <%- include('partials/footer', { title: title }) %>
+
 </body>
 </html>

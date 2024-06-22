@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate</title>
+    <link rel="stylesheet" href="./css/stylecom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" /> 
+</head>
+<body>
+    <%- include('partials/header', { title: title }) %>
+<main style = "display: grid; margin-top:100px">
+<h1 style="display:flex;justify-content: center;margin-top:100px;margin-bottom:0;">YOUR HISTORY</h1>
+<div class="theMainvillas">
+    <div class="property-box2">
+        <img class="imagee" src="https://images.squarespace-cdn.com/content/v1/659abcff70b31d52f9bee625/1707486084942-WZUBI2FE57ZBAF84KGL1/Arthur+Full+Building.JPG" alt="">
+        <div class="property-content">
+            <h2 class="hdng"> Korba </h2>
+            <p class="villparagraph"> The first of its kind in the region, it brings together the best of a luxury villa, duplex, and master community.</p>
+            <a href="page.html?btn=3" class="button avilla"> Find out more <span class="material-symbols-outlined"> arrow_right_alt </span> </a>
+        </div>
+    </div>
+    <div class="property-box2">
+        <img class="imagee" src="https://st.depositphotos.com/2256213/3420/i/450/depositphotos_34203861-stock-photo-modern-apartment-building.jpg" alt="">
+        <div class="property-content">
+            <h2 class="hdng"> Downtown </h2>
+            <p class="villparagraph"> Specially designed 1, 1.5 and 2 bedroom apartments that offer you all-encompassing views of the city as you embark on an exquisite waterfront lifestyle. </p>
+            <a href="page.html?btn=3" class="button avilla"> Find out more <span class="material-symbols-outlined"> arrow_right_alt </span> </a>
+        </div>
+    </div>
+
+    <div class="property-box2">
+        <img class="imagee" src="https://m2-estate.com/wp-content/uploads/2023/09/difference-between-villa-chale-bungalow-duplex-townhouse-5.jpg" alt="">
+        <div class="property-content">
+            <h2 class="hdng"> Masr Al Gedida </h2>
+            <p class="villparagraph"> Specially designed 1, 1.5 and 2 bedroom apartments that offer you all-encompassing views of the city as you embark on an exquisite waterfront lifestyle. </p>
+            <a href="page.html?btn=3" class="button avilla"> Find out more <span class="material-symbols-outlined"> arrow_right_alt </span> </a>
+        </div>
+    </div>
+</div>
+</main>
+</body>
+</html>

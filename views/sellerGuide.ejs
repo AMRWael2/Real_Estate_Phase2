@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Seller's Guide</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 20px;
+		}
+		
+		.step {
+			margin-bottom: 20px;
+			padding: 20px;
+			border: 1px solid #ddd;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		
+		.step-number {
+			font-weight: bold;
+			font-size: 18px;
+			margin-bottom: 10px;
+		}
+		
+		.step-description {
+			font-size: 16px;
+			color: #666;
+		}
+		
+		.step-icon {
+			font-size: 24px;
+			color: #337ab7;
+			margin-right: 10px;
+		}
+	</style>
+</head>
+<body>
+    <%- include('partials/header', { title: title }) %>
+
+	<h1>Seller's Guide: 10 Steps to Sell Your Home</h1>
+	
+	<div class="step">
+		<span class="step-icon">&#x2714;</span>
+		<div class="step-number">1. Find a trusted real estate agent</div>
+		<div class="step-description">Work with an experienced agent who knows your local market and can guide you through the selling process.</div>
+	</div>
+	
+	<div class="step">
+		<span class="step-icon">&#x2714;</span>
+		<div class="step-number">2. Invest in value-adding improvements</div>
+		<div class="step-description">Make strategic upgrades to increase your home's appeal and value, such as new appliances or a fresh coat of paint.</div>
+	</div>
+	
+	<div class="step">
+		<span class="step-icon">&#x2714;</span>
+		<div class="step-number">3. Up your curb appeal</div>
+		<div class="step-description">Make a great first impression by tidying up your yard, adding some colorful plants, and giving your front door a fresh coat of paint.</div>
+	</div>
+	
+	<div class="step">
+		<span class="step-icon">&#x2714;</span>
+		<div class="step-number">4. Get a pre-listing inspection</div>
+		<div class="step-description">Identify and fix any potential issues before listing your home to avoid last-minute surprises.</div>
+	</div>
+	
+	<div class="step">
+		<span class="step-icon">&#x2714;</span>
+		<div class="step-number">5. Highlight with pro photos</div>
+		<div class="step-description">Hire a professional photographer to showcase your home's best features and make it stand out online.</div>
+	</div>
+	
+	<div class="step">
+		<span class="step-icon">&#x2714;</span>
+		<div class="step-number">6. Stage your home</div>
+		<div class="step-description">Arrange your furniture and decor to create a welcoming and neutral atmosphere that appeals to potential buyers.</div>
+	</div>
+	
+	<div class="step">
+		<span class="step-icon">&#x2714;</span>
+		<div class="step-number">7. Set the right asking price</div>
+		<div class="step-description">Price your home competitively based on its condition, location, and comparable sales in the area.</div>
+	</div>
+	
+	<div class="step">
+		<span class="step-icon">&#x2714;</span>
+		<div class="step-number">8. Remove personal items</div>
+		<div class="step-description">Depersonalize your home to make it easier for buyers to imagine themselves living there.</div>
+	</div>
+	
+	<div class="step">
+		<span class="step-icon">&#x2714;</span>
+		<div class="step-number">9. Be ready to move fast</div>
+		<div class="step-description">Be prepared to respond quickly to offers and be flexible with negotiations to get the best deal.</div>
+	</div>
+	
+	<div class="step">
+		<span class="step-icon">&#x2714;</span>
+		<div class="step-number">10. Use your head, not your heart</div>
+		<div class="step-description">Make rational decisions based on market data and expert advice, rather than emotional attachments to your home.</div>
+	</div>
+	<%- include('partials/footer', { title: title }) %>
+</body>
+</html>

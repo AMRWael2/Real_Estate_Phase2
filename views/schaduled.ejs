@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scheduled appointments</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="./css/adcss.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="navigation">
+        <ul>
+            <li>
+                <a class="navbar-brand" href="/views/Dashboard2.ejs">
+                    <img src="/images/download.png" alt="logo">
+                </a>
+            </li>
+            <li>
+                <a href="/Dashboard2.ejs">
+                    <span class="icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </span>
+                    <span class="title">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="/orders.ejs">
+                    <span class="icon">
+                        <ion-icon name="cart-outline"></ion-icon>
+                    </span>
+                    <span class="title">Orders</span>
+                </a>
+            </li>
+            <li>
+                <a href="/schaduled.ejs">
+                    <span class="icon">
+                        <ion-icon name="watch-outline"></ion-icon>
+                    </span>
+                    <span class="title">Scheduled</span>
+                </a>
+            </li>
+            <li>
+                <a href="/customers.ejs">
+                    <span class="icon">
+                        <ion-icon name="people-outline"></ion-icon>
+                    </span>
+                    <span class="title">Customers</span>
+                </a>
+            </li>
+            <li>
+                <a href="/AdminApartments.ejs">
+                    <span class="icon">
+                        <ion-icon name="list-outline"></ion-icon>
+                    </span>
+                    <span class="title">Products</span>
+                </a>
+            </li>
+            <li>
+                <a href="/sellRequests.ejs">
+                    <span class="icon">
+                        <ion-icon name="paper-plane-outline"></ion-icon>
+                    </span>
+                    <span class="title">Sell Requests</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="document-outline"></ion-icon>
+                    </span>
+                    <span class="title">Client's Feedbacks</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="briefcase-outline"></ion-icon>
+                    </span>
+                    <span class="title">Agents</span>
+                </a>
+            </li>
+            <li>
+                <a href="/Mainindex.ejs">
+                    <span class="icon">
+                        <ion-icon name="log-out-outline"></ion-icon>
+                    </span>
+                    <span class="title">Sign Out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- ========================= Main ==================== -->
+    <div class="main">
+        <div class="topbar">
+            <div class="toggle">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+
+            <div class="logoo">
+                <img src="/images/download.png" alt="logo">
+            </div>
+
+            <div class="search">
+                <label>
+                    <input type="text" placeholder="Search here">
+                    <ion-icon name="search-outline"></ion-icon>
+                </label>
+            </div>
+        </div>
+
+        <!-- ======================= Cards ================== -->
+        <div class="cardBox">
+            <div class="card">
+                <div>
+                    <div class="numbers">1,504</div>
+                    <div class="cardName">Daily Views</div>
+                </div>
+
+                <div class="iconBx">
+                    <ion-icon name="eye-outline"></ion-icon>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="numbers">80</div>
+                    <div class="cardName">Sales</div>
+                </div>
+
+                <div class="iconBx">
+                    <ion-icon name="cart-outline"></ion-icon>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="numbers">284</div>
+                    <div class="cardName">Comments</div>
+                </div>
+
+                <div class="iconBx">
+                    <ion-icon name="chatbubbles-outline"></ion-icon>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="numbers">$7,842</div>
+                    <div class="cardName">Earning</div>
+                </div>
+
+                <div class="iconBx">
+                    <ion-icon name="cash-outline"></ion-icon>
+                </div>
+            </div>
+        </div>
+
+            <!-- ================ Order Details List ================= -->
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2> scheduled</h2>
+                        <a href="#" class="btn">View All</a>
+                    </div>
+
+                    <table class="tabled">
+                        <thead>
+                            <tr>
+                                <td>Date</td>
+                                <td>client</td>
+                                <td>phone</td>
+                                <td>Time</td>
+
+                                
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>14/5/2024</td>
+                                <td>MOHAMED ALI</td>
+                                <td>mountain view villa 193</td>
+                                
+                            </tr>
+
+                            <tr>
+                              <td>15/5/2024</td>
+                              <td>ASEL MOHAMED</td>
+                              <td>Badya palm hills villa 82</td>
+                              
+                            </tr>
+
+                            <tr>
+                              <td>16/5/2024</td>
+                              <td>AHMED ALI</td>
+                              <td>mountain view villa 193</td>
+                              
+                               
+                            </tr>
+
+                            <tr>
+                              <td>17/5/2024</td>
+                              <td>ASHRAF MOHAMED</td>
+                              <td>Badya palm hills villa 825</td>
+                              
+                            </tr>
+
+                            <tr>
+                              <td>18/5/2024</td>
+                                <td>Layla ALI</td>
+                                <td>mountain view villa 223</td>
+                                
+                                
+                            </tr>
+
+                            <tr>
+                              <td>19/5/2024</td>
+                                <td>Layla ALI</td>
+                                <td>Badya palm hills villa 8</td>
+                                
+                               
+                            </tr>
+
+                            <tr>
+                              <td>20/5/2024</td>
+                              <td>Layla ALI</td>
+                              <td>mountain view villa 223</td>
+                              
+                            </tr>
+
+                            <tr>
+                              <td>21/5/2024</td>
+                              <td>Layla ALI</td>
+                              <td>Badya palm hills villa 8</td>
+                              
+                            </tr>
+                        </tbody>
+                       
+                          
+                        
+                    </table> 
+                    <div class="button-container">
+                      <a class="button" id="addBtn">Add Order</a>
+                        <a class="button" id="editBtn">Edit Order</a>
+                        <a class="button" id="removeBtn">Remove Order</a>
+                     </div>
+             
+                     <div id="add" style="display: none;">
+                      <form id="add-order-form-data"action="/appointments/add" method="POST">
+                          <label for="add-Date">Date:</label><br>
+                          <input type="text" id="add-Date" name="Date"><br>
+                          <label for="add-client">Client:</label><br>
+                          <input type="text" id="add-client" name="client"><br>
+                          <label for="add-Location">Time:</label><br>
+                          <input type="text" id="add-Location" name="Time"><br>
+                          <button type="submit" class="button">Add</button>
+                      </form>
+                  </div>
+                  
+                  <div id="edit" style="display: none;"action="/appointments/edit" method="POST">
+                      <form id="edit-order-form-data">
+                          <input type="hidden" id="edit-id" name="id">
+                          <label for="edit-Date">Date:</label><br>
+                          <input type="text" id="edit-Date" name="Date"><br>
+                         
+                          <label for="edit-Location">Time:</label><br>
+                          <input type="text" id="edit-Location" name="Time"><br>
+                          <label for="edit-client">Client:</label><br>
+                          <input type="text" id="edit-client" name="client"><br>
+                          <button type="submit" class="button">Save Changes</button>
+                      </form>
+                  </div>
+                  
+                  <!-- =========== Scripts =========  -->
+                  <script >
+                    let list = document.querySelectorAll(".navigation li");
+
+function activeLink() {
+  list.forEach((item) => {
+    item.classList.remove("hovered");
+  });
+  this.classList.add("hovered");
+}
+
+list.forEach((item) => item.addEventListener("mouseover", activeLink));
+
+let toggle = document.querySelector(".toggle");
+let navigation = document.querySelector(".navigation");
+let main = document.querySelector(".main");
+
+toggle.onclick = function () {
+  navigation.classList.toggle("active");
+  main.classList.toggle("active");
+};
+                    document.querySelector(".tabled tbody").addEventListener("click", function(event) {
+                      if (event.target.tagName === "TD") {
+                        const selectedRow = event.target.parentElement;
+                        const selectedClass = "selected";
+                        const rows = document.querySelectorAll(".tabled tbody tr");
+                    
+                        for (const row of rows) {
+                          if (row.classList.contains(selectedClass)) {
+                            row.classList.remove(selectedClass);
+                          }
+                        }
+                    
+                        selectedRow.classList.add(selectedClass);
+                      }
+                    });
+                    
+                    document.querySelector(".button-container .button:last-child").addEventListener("click", function() {
+                      const rows = document.querySelectorAll(".tabled tbody tr");
+                      let selectedRow = null;
+                      for (const row of rows) {
+                        if (row.classList.contains("selected")) {
+                          selectedRow = row;
+                          break;
+                        }
+                      }
+                      if (selectedRow) {
+                        if (confirm("Are you sure you want to delete this order?")) {
+                          const rows = document.querySelectorAll(".tabled tbody tr");
+                          const selectedRowIndex = Array.from(rows).indexOf(selectedRow);
+                          selectedRow.remove();
+                        }
+                      }
+                    });
+                    
+                    document.querySelector(".button-container .button:first-child").addEventListener("click", function() {
+                      document.getElementById("add").style.display = "block";
+                    });
+                    
+                    document.getElementById("add-order-form-data").addEventListener("submit", function(event) {
+                      event.preventDefault();
+                    
+                      const date = document.getElementById("add-Date").value;
+                      const client = document.getElementById("add-client").value;
+                      const location = document.getElementById("add-Location").value;
+                    
+                      const rows = document.querySelectorAll(".tabled tbody tr");
+                      for (const row of rows) {
+                        if (row.querySelector("td:first-child").textContent.trim() === date.trim() && row.querySelector("td:nth-child(2)").textContent.trim() === client.trim()) {
+                          alert("Cannot add this item. Date and Client already exists.");
+                          return;
+                        }
+                      }
+                    
+                      const row = document.createElement("tr");
+                      row.innerHTML = `
+                        <td>${date}</td>
+                        <td>${client}</td>
+                        <td>${location}</td>
+                      `;
+                    
+                      document.querySelector(".tabled tbody").appendChild(row);
+                    
+                      document.getElementById("add").style.display = "none";
+                    });
+                    
+                    document.querySelector(".button-container .button:nth-child(2)").addEventListener("click", function() {
+                      const selectedRow = document.querySelector(".tabled tbody tr.selected");
+                      if (selectedRow) {
+                        document.getElementById("edit").style.display = "block";
+                        document.getElementById("edit-id").value = Array.from(selectedRow.parentElement.children).indexOf(selectedRow);
+                        document.getElementById("edit-Date").value = selectedRow.querySelector("td:first-child").textContent;
+                        document.getElementById("edit-client").value = selectedRow.querySelector("td:nth-child(2)").textContent;
+                        document.getElementById("edit-Location").value = selectedRow.querySelector("td:nth-child(3)").textContent;
+                      }
+                    });
+                    
+                    document.getElementById("edit-order-form-data").addEventListener("submit", function(event) {
+                      event.preventDefault();
+                    
+                      const id = document.getElementById("edit-id").value;
+                      const date = document.getElementById("edit-Date").value;
+                      const client = document.getElementById("edit-client").value;
+                      const location = document.getElementById("edit-Location").value;
+                    
+                      const rows = document.querySelectorAll(".tabled tbody tr");
+                      const selectedRow = rows[id];
+                    
+                      selectedRow.querySelector("td:first-child").textContent = date;
+                      selectedRow.querySelector("td:nth-child(2)").textContent = client;
+                      selectedRow.querySelector("td:nth-child(3)").textContent = location;
+                    
+                      document.getElementById("edit").style.display = "none";
+                    });
+                    
+                    document.querySelectorAll(".tabled tbody tr").forEach(function(row) {
+                      row.addEventListener("click", function() {
+                        document.querySelectorAll(".tabled tbody tr").forEach(function(otherRow) {
+                          otherRow.classList.remove("selected");
+                        });
+                    
+                        this.classList.add("selected");
+                      });
+                    });
+                    
+                    function updateTable(data) {
+                      const tableBody = document.querySelector(".tabled tbody");
+                      tableBody.innerHTML = "";
+                    
+                      for (const rowData of data) {
+                        const row = document.createElement("tr");
+                        row.innerHTML = `<td>${rowData.date}</td><td>${rowData.client}</td><td>${rowData.location}</td>`;
+                        tableBody.appendChild(row);
+                      }
+                    }
+                    
+                    document.addEventListener("DOMContentLoaded", function() {
+                      const orders = [
+                        { date: "14/5/2024", client: "MOHAMED ALI", location: "mountain view villa 193" },
+                        { date: "15/5/2024", client: "ASEL MOHAMED", location: "Badya palm hills villa 82" },
+                        { date: "16/5/2024", client: "AHMED ALI", location: "mountain view villa 193" },
+                        { date: "17/5/2024", client: "ASHRAF MOHAMED", location: "Badya palm hills villa 825" },
+                        { date: "18/5/2024", client: "Layla ALI", location: "mountain view villa 223" },
+                        { date: "19/5/2024", client: "Layla ALI", location: "Badya palm hills villa 8" },
+                        { date: "20/5/2024", client: "Layla ALI", location: "mountain view villa 223" },
+                        { date: "21/5/2024", client: "Layla ALI", location: "Badya palm hills villa 8" }
+                      ];
+                    
+                      updateTable(orders);
+                    });
+                    
+                    
+                    
+           
+                    
+                    
+                    
+                    
+                    
+                    
+                    </script>
+              
+                            <!-- ====== ionicons ======= -->
+                  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+                  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+              </body>
+              </html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        .theMainvillas {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .property-box2 {
+            width: 30rem;
+            height: 36rem;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+            margin: 0 10px;
+        }
+
+        .imagee {
+            position: absolute;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            transition: opacity .2s ease-out;
+        }
+
+        .hdng {
+            position: absolute;
+            inset: auto auto 30px 30px;
+            margin: 0;
+            transition: inset .3s .3s ease-out;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: normal;
+            text-transform: uppercase;
+        }
+
+        .villparagraph, .avilla {
+            position: absolute;
+            opacity: 0;
+            max-width: 80%;
+            transition: opacity .3s ease-out;
+        }
+
+        .villparagraph {
+            inset: auto auto 80px 30px;
+        }
+
+        .avilla {
+            inset: auto auto 40px 30px;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .property-box2:hover .hdng {
+            inset: auto auto 220px 30px;
+            transition: inset .2s ease-out;
+        }
+
+        .property-box2:hover .villparagraph, .property-box2:hover .avilla {
+            opacity: 1;
+            transition: opacity .4s .07s ease-in;
+        }
+
+        .property-box2:hover .imagee {
+            filter: brightness(50%);
+            transition: opacity .3s ease-in;
+            opacity: 1;
+        }
+
+        .material-symbols-outlined {
+            vertical-align: middle;
+        }
+
+        .property-content {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<main class="theMainvillas">
+    <div class="property-box2">
+        <img class="imagee" src="https://hurghadiansproperty.com/wp-content/uploads/2023/11/acasa_mia_04.png" alt="">
+        <div class="property-content">
+            <h2 class="hdng">Attameya Heights</h2>
+            <p class="villparagraph">The first of its kind in the region, it brings together the best of a luxury villa, duplex, and master community.</p>
+            <a href="#" class="button avilla" onclick="confirmDelete(1)">Delete <span class="material-symbols-outlined">arrow_right_alt</span></a>
+        </div>
+    </div>
+    <div class="property-box2">
+        <img class="imagee" src="https://bluerock-eg.com/images/project/6/hyde-park-1667480155.webp" alt="">
+        <div class="property-content">
+            <h2 class="hdng">Sheikh Zayed</h2>
+            <p class="villparagraph">Specially designed 1, 1.5 and 2 bedroom apartments that offer you all-encompassing views of the city as you embark on an exquisite waterfront lifestyle.</p>
+            <a href="#" class="button avilla" onclick="confirmDelete(2)">Delete <span class="material-symbols-outlined">arrow_right_alt</span></a>
+        </div>
+    </div>
+    <div class="property-box2">
+        <img class="imagee" src="https://aaf1bc7189.clvaw-cdnwnd.com/3e7c67d4c9462567f23b0b727d853874/200010494-567eb567ed/IMG_7750-HDR%20%28Copy%29-6.jpg?ph=aaf1bc7189" alt="">
+        <div class="property-content">
+            <h2 class="hdng">Fifth Settlement</h2>
+            <p class="villparagraph">340 reasons to elevate your quality of life. A rich sense of community and superlative waterfront living in one of the city’s most sought-after locations.</p>
+            <a href="#" class="button avilla" onclick="confirmDelete(3)">Delete <span class="material-symbols-outlined">arrow_right_alt</span></a>
+        </div>
+    </div>
+</main>
+
+<script>
+    function confirmDelete(cardIndex) {
+        if (confirm("Are you sure you want to delete?")) {
+            deleteCard(cardIndex);
+        }
+    }
+
+    function deleteCard(cardIndex) {
+        var cards = document.getElementsByClassName('property-box2');
+        cards[cardIndex - 1].remove();
+    }
+</script>
+
+</body>
+</html>

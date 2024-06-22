@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate</title>
+    <link rel="stylesheet" href="./css/stylecom.css">
+    <link rel="stylesheet" href="footerStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" /> 
+  </head>
+<body>
+  <%- include('partials/header', { title: title }) %>
+    <div id="main">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <video class="video" autoplay muted loop><source src="https://dpe.xceeduae.com/wp-content/uploads/2024/02/video_20.mp4"  type="video/mp4"></video>
+          <div id="back"></div>
+          <div class="carousel-caption carousel1">
+            <h5>Discover Property More Easily</h5>
+            <div class="mt-5 d-flex">
+              <input type="text" class="form-control search w-50 rounded-0" id="floatingInput" placeholder="Search...">
+              <button class="btn btn-light btn-sm justify-content-md-end mx-2 px-3 rounded-0"><i class="fas fa-search"></i>Search</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div id="h">
+        <h1 style="color: goldenrod;">DISCOVER A PREMIUM </h1>
+        
+      </div>
+      <div id="l">
+        <h1 >LIFESTYLE</h1>
+      </div>
+      <div class="sort my-4">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="dropdown mb-3">
+              <label for="bedroomsDropdown" class="form-label">Bedrooms</label>
+              <select class="form-select" id="bedroomsDropdown">
+                <option selected>Select Bedrooms</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5+</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="dropdown mb-3">
+              <label for="pricesDropdown" class="form-label">Prices</label>
+              <select class="form-select" id="pricesDropdown">
+                <option selected>Select Price Range</option>
+                <option value="100000">$100,000 - $200,000</option>
+                <option value="200000">$200,000 - $300,000</option>
+                <option value="300000">$300,000 - $400,000</option>
+                <option value="400000">$400,000 - $500,000</option>
+                <option value="500000">$500,000+</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="dropdown mb-3">
+              <label for="locationsDropdown" class="form-label">Locations</label>
+              <select class="form-select" id="locationsDropdown">
+                <option selected>Select Location</option>
+                <option value="FIFTH SETTLEMENT">FIFTH SETTLEMENT</option>
+                <option value="SHEIKH ZAYED">SHEIKH ZAYED</option>
+                <option value="ATTAMEYA HEIGHTS">ATTAMEYA HEIGHTS</option>
+                <option value="6-october">6-october</option>
+                <option value="Badya">Badya</option>
+              </select>
+            </div>
+           
+            <button class="my-button" onclick="sortProperties()" id="sort-data">SORT-DATA</button>
+          </div>
+        </div>
+      </div>
+      <main class = "theMainvillas"> 
+        <div class="property-box2" data-price="1000000" data-bedrooms="2" data-location="Attameya Heights"> 
+            <img class = "imagee" src="https://hurghadiansproperty.com/wp-content/uploads/2023/11/acasa_mia_04.png" alt=""> 
+            <div class="property-content"> 
+                <h2 class = "hdng"> Attameya Heights </h2> 
+                <p class = "villparagraph"> The first of its kind in the region, it brings together the best of a luxury villa, duplex, and master community.</p> 
+                <a href="#" class="button avilla"> Find out more <span class="material-symbols-outlined"> arrow_right_alt </span> </a> 
+            </div> 
+        </div> 
+        <div class="property-box2" data-price="2000000" data-bedrooms="2" data-location="Sheikh Zayed "> 
+            <img class = "imagee" src=https://realestate.eg/storage/posts/J7kfC2oWZcLTzjW6_thumb.jpg alt=""> 
+            <div class="property-content"> 
+                <h2 class = "hdng"> Sheikh Zayed </h2> 
+                <p class = "villparagraph"> The first of its kind in the region, it brings together the best of a luxury villa, duplex, and master community.</p> 
+               
+                <a href="#" class="button avilla"> Find out more <span class="material-symbols-outlined"> arrow_right_alt </span> </a> 
+            </div> 
+        </div> 
+        <div class="property-box2" data-price="4000000" data-bedrooms="3" data-location="Fifth Settlement"> 
+            <img class = "imagee" src="https://aaf1bc7189.clvaw-cdnwnd.com/3e7c67d4c9462567f23b0b727d853874/200010494-567eb567ed/IMG_7750-HDR%20%28Copy%29-6.jpg?ph=aaf1bc7189" alt=""> 
+            <div class="property-content"> 
+                <h2 class = "hdng"> Fifth Settlement </h2> 
+                <p class = "villparagraph">340 reasons to elevate your quality of life. A rich sense of community and superlative waterfront living in one of the city’s most sought-after locations.</p> 
+                <a href="#" class="button avilla"> Find out more <span class="material-symbols-outlined"> arrow_right_alt </span> </a> 
+            </div> 
+        </div> 
+        
+    </main> 
+  
+    <main class = "theMainvillas"> 
+      
+      <div class="property-box2" data-price="5000000" data-bedrooms="5" data-location="mountain view"> 
+          <img class = "imagee" src=https://realestate.eg/ckfinder/userfiles/images/properties-for-sale-in-privado/Building%20for%20sale%20in%20privado%20talaat%20mostafa.jpg alt=""> 
+          <div class="property-content"> 
+              <h2 class = "hdng"> mountain view </h2> 
+              <p class = "villparagraph"> The first of its kind in the region, it brings together the best of a luxury villa, duplex, and master community.</p> 
+              <a href="#" class="button avilla"> Find out more <span class="material-symbols-outlined"> arrow_right_alt </span> </a> 
+          </div> 
+      </div> 
+      <div class="property-box2" data-price="3000000" data-bedrooms="3" data-location="Badya"> 
+          <img class = "imagee" src=https://egypttoday.com/wp-content/uploads/2016/06/9-La-Fontaine-copy.jpg alt=""> 
+          <div class="property-content"> 
+              <h2 class = "hdng">Badya </h2> 
+              <p class = "villparagraph"> Specially designed 1, 1.5 and 2 bedroom apartments that offer you all-encompassing views of the city as you embark on an exquisite waterfront lifestyle. </p> 
+              <a href="#" class="button avilla"> Find out more <span class="material-symbols-outlined"> arrow_right_alt </span> </a> 
+          </div> 
+      </div> 
+      <div class="property-box2"  data-price="4400000" data-bedrooms="4" data-location="6-october "> 
+          <img class = "imagee" src=https://elbayt.com/assets/uploads/images/16446/60178a5cfb29860514d72d2c7277e907/ph-new-cairo-palm-hills-39jpeg-1200x900.jpg alt=""> 
+          <div class="property-content"> 
+              <h2 class = "hdng"> 6-october </h2> 
+              <p class = "villparagraph">340 reasons to elevate your quality of life. A rich sense of community and superlative waterfront living in one of the city’s most sought-after locations.</p> 
+              <a href="#" class="button avilla"> Find out more <span class="material-symbols-outlined"> arrow_right_alt </span> </a> 
+          </div> 
+      </div> 
+      
+  </main>
+      <section class="client">
+        <div class="container">
+          <div class="heading">
+            <h2 class="title">What our client say</h2>
+          </div>
+          <div class="items">
+            <div class="card">
+              <img src=C:\Users\moham\Downloads\ProjectPortfolio\Images\b24e5f7c-33f5-4355-a012-59f1f228ae6d.jpg alt="client" />
+              <div class="stars">
+                <span class="active"><i class="fa fa-star"></i></span>
+                <span class="active"><i class="fa fa-star"></i></span>
+                <span class="active"><i class="fa fa-star"></i></span>
+                <span class="active"><i class="fa fa-star"></i></span>
+                <span class=""><i class="fa fa-star"></i></span>
+              </div>
+              <p>
+                The booking process was seamless, and the confirmation was
+                instant. I highly recommend Sa&Jo for hassle-free hotel bookings.
+              </p>
+            </div>
+            <div class="card">
+              <img src=C:\Users\moham\Downloads\ProjectPortfolio\Images\b8fb9346-9f7f-4d92-86f8-17f132bf697b.jpg alt="client" />
+              <div class="stars">
+                <span class="active"><i class="fa fa-star"></i></span>
+                <span class="active"><i class="fa fa-star"></i></span>
+                <span class="active"><i class="fa fa-star"></i></span>
+                <span class="active"><i class="fa fa-star"></i></span>
+                <span class="active"><i class="fa fa-star"></i></span>
+              </div>
+              <p>
+                The website provided detailed information about hotel, including
+                amenities, photos, which helped me make an informed decision.
+              </p>
+            </div>
+            <div class="card">
+              <img src=C:\Users\moham\Downloads\ProjectPortfolio\Images\a45d9026-ec65-470d-b52f-ae630c509519.jpg alt="client" />
+              <div class="stars">
+                <span class="active"><i class="fa fa-star"></i></span>
+                <span class="active"><i class="fa fa-star"></i></span>
+                <span class="active"><i class="fa fa-star"></i></span>
+                <span class="active"><i class="fa fa-star"></i></span>
+                <span class=""><i class="fa fa-star"></i></span>
+              </div>
+              <p>
+                I was able to book a room within minutes, and the hotel exceeded
+                my expectations. I appreciate Sa&Jo's efficiency and reliability.
+              </p>
+            </div>
+          </div>
+          <button type="button" class="rate-us" onclick="window.location.href='rating.ejs'">Rate Us</button>
+        </div>
+      </section>
+      <section class="reward ">
+        <div class="container">
+            <div class="content">
+                <p >100+ discount codes</p>
+                <h4  >Join rewards and discover amazing discounts on your booking</h4>
+                <a href="rewardform.ejs" class="my-button  animate">Join Rewards</a>
+                <hr class="hr-line ">
+                <div class="reward-c">
+                    <div class="reward-h3 ">
+                        <h3  class="">7.4% </h3>
+                        <h6 class=""> property Return Rate</h6>
+                    </div>
+                    <div class="vl"></div>
+                    <div>
+                        <h3 class="">3,856 </h3>
+                        <h6 class="">property in Sell and Rent</h6>
+                    </div>
+                    <div class="vl"></div>
+                    <div>
+                        <h3 class="">2,540</h3>
+                        <h6 class="">Daily Completed Transactions</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+      <h1 class="heading" style="color: goldenrod;">New</h1>
+      <h1 class="heading" style="color: black;">LAUNCHES</h1>
+      <div class="image-container">
+       
+        <img src=C:\Users\moham\Downloads\ProjectPortfolio\Images\c51ea7cc-74b4-45f8-b806-6c2b9b1529bc.jpg alt="Image">
+        <div class="expand-box">
+          <div class="content">
+            <img src=C:\Users\moham\Downloads\79b8802c-eec9-4441-aa8e-0d44744f4d5d-removebg-preview.png alt="logo">
+          </div>
+          <div class="expanded-content" >
+            <p >Jacuzzi<i class="fa-solid fa-hot-tub-person  icon" ></i><div class="vl"></div></p>
+          <p>Kids Area<i class='fas fa-shapes'></i></i><div class="vl"></div></p>
+            <br>Relaxation <i class="fa-solid fa-mug-hot"></i><div class="vl"></div></p>
+          <p>Panoramic green views<i class="fa-solid fa-tree"></i><div class="vl"></div></p> 
+          </div>
+          <div  class="buttons"  >
+          <a href="" class="my-button " style="margin: 20px;"><i class="fas fa-phone"></i>Call </a>
+          <a href="" class="my-button" style="margin: 20px;"><i class="fa-solid fa-eye"></i>View Projects </a>
+         
+          </div>
+        </div>
+      </div>
+
+
+      <section class="services">
+        <h1 class="heading">Our Services</h1>
+      <div class="box-container">
+        <div class="box">
+            <img src="img/icon-buy.png" alt="buy-home-icon">
+            <h3><a href = "Apartments.ejs" class="Maininexclassanchor">Apartments</a></h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur, sapiente.</p>
+        </div>
+        <div class="box">
+            <img src="img/icon-rent.png" alt="rent-home-icon">
+            <h3><a href = "Villas.ejs" class="Maininexclassanchor">Villas</a></h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur, sapiente.</p>
+        </div>
+        <div class="box">
+            <img src="img/icon-sale1.jpg" alt="sell-home-icon">
+            <h3><a href = "sell.ejs" class="Maininexclassanchor">Sell House</a></h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur, sapiente.</p>
+        </div> 
+        <div class="box">
+            <img src="img/service-icon.png" alt="service-icon">
+            <h3><a href = "Apartments.ejs" class="Maininexclassanchor">24/7</a></h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur, sapiente.</p>
+        </div>
+      </div>
+    </section>
+
+
+
+    <%- include('partials/footer', { title: title }) %>
+
+
+
+
+
+
+
+
+
+
+
+<script src="Javaa.js"></script>
+<script src="user-name.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

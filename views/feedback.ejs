@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/feedbackStyle.css">
+    <title>Feedback</title>
+</head>
+<body class="feedbackpage">
+    <div class="container">
+        <h2>Your feedback helps us to improve. Thank you for sharing.</h2>
+        <p class="title">I am a...</p>
+        <select id="typeSelect" required>
+            <option>Select an option...</option>
+            <option>Buyer</option>
+            <option>Seller</option>
+            <option>Buyer & Seller</option>
+            <option>Renter</option>
+            <option>landlord/owner</option>
+            <option>Investor</option>
+            <option>Real Estate Broker</option>
+            <option>Real Estate Agent</option>
+            <option>Builder</option>
+            <option>Other</option>
+        </select>
+        <p class="below" id="typeBelow">This field cannot be left blank.</p>
+
+        <p class="title">Email</p>
+        <input type="email" name="email" id="email" placeholder="Enter your email address" required>
+        <p class="below-email">Please provide your email address so we can follow-up if needed.</p>
+
+        <p class="title">Name</p>
+        <input type="text" name="name" id="name" placeholder="Enter your name">
+
+        <p class="title">What is your feedback about?</p>
+        <select id="feedbackType" required>
+            <option>Select an option...</option>
+            <option>Property</option>
+            <option>Rental Property</option>
+            <option>My Home</option>
+            <option>Experience</option>
+            <option>Search</option>
+            <option>Selling Property</option>
+            <option>Find Realtor</option>
+            <option>Collaboration Feature</option>
+            <option>My Account</option>
+            <option>New Feature</option>
+            <option>Other</option>
+        </select>
+        <p class="below" id="feedbackTypeBelow">This field cannot be left blank.</p>
+
+        <p class="title">Additional comments</p>
+        <textarea name="comment" id="comment" cols="100" rows="6" placeholder="Tell us what's on your mind. We'll do our best to address it." required></textarea>
+        <p class="below" id="commentBelow">This field cannot be left blank.</p>
+        <button class="btn" id="feedbackbtn">Share feedback</button>
+    </div>
+
+    <div class="container" id="feedbackMessage" style="display: none;">
+        <h2>Thank you for your feedback!</h2>
+        <p>We appreciate you taking the time to share your thoughts with us. We will review your feedback and take appropriate actions.</p>
+    </div>
+
+    <script>
+    document.getElementById("feedbackbtn").addEventListener("click", function() {
+    var typeSelect = document.getElementById("typeSelect");
+    var typeBelow = document.getElementById("typeBelow");
+    var emailInput = document.getElementById("email");
+    var feedbackType = document.getElementById("feedbackType");
+    var feedbackTypeBelow = document.getElementById("feedbackTypeBelow");
+    var commentInput = document.getElementById("comment");
+    var commentBelow = document.getElementById("commentBelow");
+
+    if (typeSelect.value === "Select an option...") {
+        typeSelect.style.borderColor = "red";
+        typeBelow.style.color = "red";
+        return;
+    } else {
+        typeSelect.style.borderColor = ""; // Reset border color
+        typeBelow.style.color = ""; // Reset text color
+    }
+
+    if (emailInput.value.trim() === "") {
+        emailInput.style.borderColor = "red";
+        return;
+    } else {
+        emailInput.style.borderColor = ""; 
+    }
+
+    if (feedbackType.value === "Select an option...") {
+        feedbackType.style.borderColor = "red";
+        feedbackTypeBelow.style.color = "red";
+        return;
+    } else {
+        feedbackType.style.borderColor = ""; 
+        feedbackTypeBelow.style.color = ""; 
+    }
+
+    if (commentInput.value.trim() === "") {
+        commentInput.style.borderColor = "red";
+        commentBelow.style.color = "red";
+        return;
+    } else {
+        commentInput.style.borderColor = ""; 
+        commentBelow.style.color = "";
+    }
+
+    document.getElementById("feedbackMessage").style.display = "block";
+    document.querySelector(".container").style.display = "none";
+    });
+    </script>
+</body>
+</html>

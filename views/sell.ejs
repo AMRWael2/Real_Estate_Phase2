@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" class="sell1">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sell</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="fontawesome-free-6.5.2-web/css/all.min.css"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="/css/sell.css">
+</head>
+<body>
+  <%- include('partials/header', { title: title }) %>
+
+<section id="background">
+<div class="title">
+  <h1>Sell your home with confidence</h1>
+  <h3>This website makes it simpler to sell your home and move forward.</h3>  
+</div>
+</section>
+<section class="sec1">
+  <h1>Sell with a partner agent or get a cash offer</h1>
+  <img src="/images/img/sell_1.png" alt="cash_offers_img">
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum esse mollitia omnis sapiente laborum accusamus asperiores maiores praesentium quas a temporibus, distinctio veritatis, reprehenderit hic natus quisquam iure modi neque?</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit delectus provident expedita dolorum vero, dolores optio cum id adipisci saepe dicta quas consequuntur ex eum! Consequatur voluptatum mollitia sunt sequi! In, doloribus hic nesciunt fuga maxime mollitia quisquam voluptatibus maiores eius ipsum. To see if it's available in your city.</p>
+  <h2>Compare personalized options, no commitment required</h2>
+    <div class="block">
+    <div class="grid1">
+      <h2>Sell directly to Opendoor</h2>
+      <p> ipsum, dolor sit amet consectetur adipisicing elit. Quaerat similique fuga ipsum perspiciatis deserunt </p>
+    </div>
+    <div class="grid2">
+      <h2>Sell with a partner agent</h2>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+    </div>
+</div>
+    </section>
+</section>
+<section class="sec2">
+  <h1>Sell traditionally with an agent</h1>
+  <img src="/images/img/sell-2.png" alt="sell-with-agent">
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad aut molestias provident deserunt similique velit ipsam, enim, recusandae sed et ea magnam optio dolorem expedita nulla reprehenderit esse temporibus blanditiis!</p>
+  <button onclick="window.location.href='/agent.ejs '" target="_self">Find an agent</button>
+  <div class="block">
+  <div class="grid1">
+    <h2>Why sell traditionally</h2>
+    <ul>
+      <li><i class="fa-solid fa-check"></i> Potential for bidding wars</li>
+      <li><i class="fa-solid fa-check"></i> Access to local market expertise</li>
+      <li><i class="fa-solid fa-check"></i> Get help negotiating and reviewing offers</li>
+      <li><i class="fa-solid fa-check"></i> Navigate a stressful process with a dedicated guide</li>
+    </ul>
+  </div>
+  <div class="grid2">
+    <h2>How to sell traditionally</h2>
+  <p>Learn more about the process of <a>selling your house with a listing agent</a>. If this is the best route for you, interview agents and select a professional who will meet your expectations. Your agent will then guide you through the<a> steps of selling your home</a>.</p>
+  </div>
+</div>
+</section>
+<section class="sec1">
+    <h1>Sell your home yourself</h1>
+  <img src="/images/img/sell-3.png" >
+  <p>Deciding to sell your home yourself is referred to as for-sale-by-owner (FSBO). The FSBO process is<a> similar to traditional selling</a>, but without the help of a real estate agent. In this case, you’re responsible for the home prep, marketing, showings, and negotiations.</p>
+  <button type="button"  onclick="window.location.href='/postForSale.ejs '" target="_self">Post your home for sale</button>
+  <div class="block">
+  <div class="grid1">
+    <h2>Why sell FSBO</h2>
+    <ul>
+      <li><i class="fa-solid fa-check"></i> Avoid paying a listing agent commission</li>
+      <li><i class="fa-solid fa-check"></i> Advertise your listing for free</li>
+      <li><i class="fa-solid fa-check"></i> Flexibility and control from start to finish</li>
+    </ul>
+  </div>
+  <div class="grid2">
+    <h2>How to sell FSBO</h2>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum cum exercitationem debitis labore quod repellendus ipsum aperiam alias reiciendis, eligendi ad expedita quo eos aspernatur. Ut perspiciatis laborum veniam quos illum harum dolorum sed distinctio corporis voluptate temporibus optio ratione, quam est! Molestiae, provident officiis.</p>
+  </div>
+</div>
+</section>
+
+<section class="sec3">
+    <div class="separator"></div>
+    <h1>Seller guides</h1>
+    <div class="outer">
+        <div class="inner">
+            <img src="/images/img/sell-icon1.png" class="img1">
+            <a href="https://www.remax.com.eg/Blog/BUYING_AND_SELLING_YOUR_HOME.aspx" target="_self">Shold I sell my home now?</a>
+        </div>
+        <div class="inner" >
+            <img src="/images/img/sell-icon3.png">
+            <a href="/homeVestimator.ejs " target="_self">How much is my home worth?</a>
+        </div>
+        <div class="inner">
+            <img src="/images/img/sell-icon2.png">
+            <a href="/sellerGuide.ejs " target="_self">How should I sell my home?</a>
+        </div>
+        <div class="inner">
+            <img src="/images/img/sell-icon4.png">
+            <a href="/sellerGuide1.ejs " target="_self">How to prepare your home for sale?</a>
+        </div>
+    </div>
+</section>
+<%- include('partials/footer', { title: title }) %>
+</body>
+</html>

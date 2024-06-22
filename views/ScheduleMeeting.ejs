@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule Meeting</title>
+  <link rel="stylesheet" href="/css/Schedule Meeting.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="left-section">
+      <h2>Fill in Your Details & Get VIP Access to the Latest Market Updates</h2>
+      <p>Join our exclusive members to get the latest updates about Dubai's real estate market and be the first to know about all the new launches</p>
+      <div class="contact-info">
+        <img src="/images/consultant.jpg" alt="Consultant">
+        <p>Call one of our consultants for assistance</p>
+        <p>+971 50 539 0249</p>
+      </div>
+    </div>
+    <div class="right-section">
+      <form action="./" method="POST" id="meetingForm">
+        <label for="phoneNumber">Phone Number</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" required>
+
+
+        <label for="meetingDate">Preferred Meeting Date</label>
+        <input type="date" id="meetingDate" name="meetingDate" required>
+
+        <label for="meetingTime">Preferred Meeting Time</label>
+        <input type="time" id="meetingTime" name="meetingTime" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
