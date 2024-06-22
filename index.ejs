@@ -3,97 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Real Estate</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-
-<style>
-  
-
-</style>
-
-
-
-
-
-
-
-
-  </head>
+</head>
 <body>
-  <%- include('partials/header', { title: title }) %>
-    <div id="main">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <video class="video" autoplay muted loop>
-                    <source src="https://dpe.xceeduae.com/wp-content/uploads/2024/02/video_20.mp4" type="video/mp4">
-                </video>
-                <div id="back"></div>
-                <div class="carousel-caption carousel1">
-                  <h5 data-translate="discoverProperty">Discover Property More Easily</h5>
-                  <div class="mt-5 d-flex">
+    <header id="header">
+        <nav class="navbar navbar-expand-lg position-fixed">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="./images/download.png" alt="logo" class="w-50">
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="index.ejs" data-translate="home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./aboutUs.ejs" data-translate="aboutUs">ABOUT US</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCommunities" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-translate="communities">COMMUNITIES <i class="fas "></i></a>
+                            <ul class="dropdown-menu navbarDropdown rounded-0" aria-labelledby="navbarDropdownCommunities">
+                                <li><a class="dropdown-item" href="./com.ejs" data-translate="newCairo">NEW CAIRO</a></li>
+                            </ul>
+                            
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCommunities" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-translate="communities"><i class="fa-solid fa-earth-americas"></i><i class="fas "></i></a>
+                            <ul class="dropdown-menu navbarDropdown rounded-0" aria-labelledby="navbarDropdownlanguage">
+                                <li><a class="dropdown-item" href="#"  value="en">English</a></li>
+                                <li><a class="dropdown-item" href="#"  value="ar">Arabic</a></li>
+                            </ul>
+                            </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProperties" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-translate="properties">PROPERTIES <i class="fas "></i></a>
+                            <ul class="dropdown-menu navbarDropdown rounded-0" aria-labelledby="navbarDropdownProperties">
+                                <li><a class="dropdown-item" href="./Apartments.ejs" data-translate="apartments">APARTMENTS</a></li>
+                                <li><a class="dropdown-item" href="./Villas.ejs" data-translate="villas">VILLAS</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="./sell.ejs" data-translate="sell">SELL</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./contactUs.ejs" data-translate="contactUs">CONTACT US</a></li>
+                        <li class="nav-item"><a class="nav-link btn text-white bg-dark px-3 rounded-0" href="./Login1.ejs" data-translate="login">LOGIN</a></li>
+                        <li class="nav-item"><a class="nav-link btn text-white bg-dark px-3 rounded-0" href="./Signup1.ejs" data-translate="signUp">SIGN UP</a></li>
+                    </ul>
+                    
+                    
+                   
+                </div>
+            </div>
+        </nav>
+    </header>
+
+  <div id="main">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <video class="video" autoplay muted loop>
+                <source src="https://dpe.xceeduae.com/wp-content/uploads/2024/02/video_20.mp4" type="video/mp4">
+            </video>
+            <div id="back"></div>
+            <div class="carousel-caption carousel1">
+                <h5 data-translate="discoverProperty">Discover Property More Easily</h5>
+                <div class="mt-5 d-flex">
                     <input type="text" class="form-control search w-50 rounded-0" id="floatingInput" placeholder="Search...">
-                    <button class="btn btn-light btn-sm justify-content-md-end mx-2 px-3 rounded-0"><i class="fas fa-search"></i>Search</button>
-                  </div>
+                    <button class="btn btn-light btn-sm justify-content-md-end mx-2 px-3 rounded-0" data-translate="search"><i class="fas fa-search"></i>Search</button>
+                </div>
             </div>
         </div>
     </div>
     <div id="h">
-        <h1 style="color: goldenrod;" data-translate="discoverPremium">DISCOVER A PREMIUM</h1>
-    </div>
-
-      <div id="l">
-        <h1 data-translate="lifestyle">LIFESTYLE</h1>
+      <h1 style="color: goldenrod;" data-translate="discoverPremium">DISCOVER A PREMIUM</h1>
+  </div>
+  <div id="l">
+      <h1 data-translate="lifestyle">LIFESTYLE</h1>
+  </div>
+  <div class="sort my-4">
+      <div class="row">
+          <div class="col-md-4">
+              <div class="dropdown mb-3">
+                  <label for="bedroomsDropdown" class="form-label" data-translate="bedroomsLabel">Bedrooms</label>
+                  <select class="form-select" id="bedroomsDropdown">
+                      <option selected>Select Bedrooms</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5+</option>
+                  </select>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="dropdown mb-3">
+                  <label for="pricesDropdown" class="form-label" data-translate="pricesLabel">Prices</label>
+                  <select class="form-select" id="pricesDropdown">
+                      <option selected>Select Price Range</option>
+                      <option value="100000">$100,000 - $200,000</option>
+                      <option value="200000">$200,000 - $300,000</option>
+                      <option value="300000">$300,000 - $400,000</option>
+                      <option value="400000">$400,000 - $500,000</option>
+                      <option value="500000">$500,000+</option>
+                  </select>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="dropdown mb-3">
+                  <label for="locationsDropdown" class="form-label" data-translate="locationsLabel">Locations</label>
+                  <select class="form-select" id="locationsDropdown">
+                      <option selected>Select Location</option>
+                      <option value="FIFTH SETTLEMENT">FIFTH SETTLEMENT</option>
+                      <option value="SHEIKH ZAYED">SHEIKH ZAYED</option>
+                      <option value="ATTAMEYA HEIGHTS">ATTAMEYA HEIGHTS</option>
+                      <option value="6-october">6-october</option>
+                      <option value="Badya">Badya</option>
+                  </select>
+              </div>
+              <button class="my-button" onclick="sortProperties()" id="sort-data" data-translate="sortData">SORT-DATA</button>
+          </div>
       </div>
-      <div class="sort my-4">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="dropdown mb-3">
-              <label for="bedroomsDropdown" class="form-label" data-translate="bedroomsLabel">Bedrooms</label>
-              <select class="form-select" id="bedroomsDropdown">
-                <option selected>Select Bedrooms</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5+</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="dropdown mb-3">
-              <label for="pricesDropdown" class="form-label" data-translate="pricesLabel">Prices</label>
-              <select class="form-select" id="pricesDropdown">
-                <option selected>Select Price Range</option>
-                <option value="100000">$100,000 - $200,000</option>
-                <option value="200000">$200,000 - $300,000</option>
-                <option value="300000">$300,000 - $400,000</option>
-                <option value="400000">$400,000 - $500,000</option>
-                <option value="500000">$500,000+</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="dropdown mb-3">
-              <label for="locationsDropdown" class="form-label" data-translate="locationsLabel">Locations</label>
-              <select class="form-select" id="locationsDropdown">
-                <option selected>Select Location</option>
-                <option value="FIFTH SETTLEMENT">FIFTH SETTLEMENT</option>
-                <option value="SHEIKH ZAYED">SHEIKH ZAYED</option>
-                <option value="ATTAMEYA HEIGHTS">ATTAMEYA HEIGHTS</option>
-                <option value="6-october">6-october</option>
-                <option value="Badya">Badya</option>
-              </select>
-            </div>
-           
-            <button class="my-button" onclick="sortProperties()" id="sort-data" data-translate="sortData">SORT-DATA</button>
-          </div>
-        </div>
-      </div>
-
+  </div>
 
 
       <main class="theMainvillas" id="theMainvillas">
@@ -166,140 +195,244 @@
 
 <!-------------------------------------------------------------->
 
-      <section class="client">
-        <div class="container">
-          <div class="heading">
-            <h2 class="title" data-translate="clientTitle">What our client say</h2>
-          </div>
-          <div class="items">
-            <div class="card">
+<section class="client">
+  <div class="container">
+      <div class="heading">
+          <h2 class="title" data-translate="clientTitle">What our clients say</h2>
+      </div>
+      <div class="items">
+          <div class="card">
               <img src="./images/client-1.jpg" alt="client" />
               <div class="stars">
-                <span class="active"><i class="fa fa-star"></i></span>
-                <span class="active"><i class="fa fa-star"></i></span>
-                <span class="active"><i class="fa fa-star"></i></span>
-                <span class="active"><i class="fa fa-star"></i></span>
-                <span class=""><i class="fa fa-star"></i></span>
+                  <span class="active"><i class="fa fa-star"></i></span>
+                  <span class="active"><i class="fa fa-star"></i></span>
+                  <span class="active"><i class="fa fa-star"></i></span>
+                  <span class="active"><i class="fa fa-star"></i></span>
+                  <span class=""><i class="fa fa-star"></i></span>
               </div>
               <p data-translate="clientReview1">
-                The booking process was seamless, and the confirmation was
-                instant. I highly recommend Sa&Jo for hassle-free hotel bookings.
+                  The booking process was seamless, and the confirmation was instant. I highly recommend Sa&Jo for hassle-free online bookings.
               </p>
-            </div>
-            <div class="card">
-              <img src=./images/client-2.jpg alt="client" />
+              <div class="client-info">
+                  <h3 class="name" data-translate="clientName1">John Doe</h3>
+                  <span class="job" data-translate="clientJob1">CEO at Google</span>
+              </div>
+          </div>
+          <div class="card">
+              <img src="./images/client-2.jpg" alt="client" />
               <div class="stars">
-                <span class="active"><i class="fa fa-star"></i></span>
-                <span class="active"><i class="fa fa-star"></i></span>
-                <span class="active"><i class="fa fa-star"></i></span>
-                <span class="active"><i class="fa fa-star"></i></span>
-                <span class="active"><i class="fa fa-star"></i></span>
+                  <span class="active"><i class="fa fa-star"></i></span>
+                  <span class="active"><i class="fa fa-star"></i></span>
+                  <span class="active"><i class="fa fa-star"></i></span>
+                  <span class="active"><i class="fa fa-star"></i></span>
+                  <span class=""><i class="fa fa-star"></i></span>
               </div>
               <p data-translate="clientReview2">
-                The website provided detailed information about hotel, including
-                amenities, photos, which helped me make an informed decision.
+                  Sa&Jo offers unbeatable prices on a wide range of properties. I'm always confident that I'm getting the best value for my money.
               </p>
-             
-            </div>
-            <div class="card">
-              <img src=./images/client-3.jpg alt="client" />
+              <div class="client-info">
+                  <h3 class="name" data-translate="clientName2">Jane Smith</h3>
+                  <span class="job" data-translate="clientJob2">Marketing Director</span>
+              </div>
+          </div>
+          <div class="card">
+              <img src="./images/client-3.jpg" alt="client" />
               <div class="stars">
-                <span class="active"><i class="fa fa-star"></i></span>
-                <span class="active"><i class="fa fa-star"></i></span>
-                <span class="active"><i class="fa fa-star"></i></span>
-                <span class="active"><i class="fa fa-star"></i></span>
-                <span class=""><i class="fa fa-star"></i></span>
+                  <span class="active"><i class="fa fa-star"></i></span>
+                  <span class="active"><i class="fa fa-star"></i></span>
+                  <span class="active"><i class="fa fa-star"></i></span>
+                  <span class="active"><i class="fa fa-star"></i></span>
+                  <span class=""><i class="fa fa-star"></i></span>
               </div>
               <p data-translate="clientReview3">
-                I was able to book a room within minutes, and the hotel exceeded
-                my expectations. I appreciate Sa&Jo's efficiency and reliability.
-              </p>  
-            
+                  I love the flexibility of booking with Sa&Jo. Whether I need a last-minute reservation or an extended stay, they always have options that suit my needs.
+              </p>
+              <div class="client-info">
+                  <h3 class="name" data-translate="clientName3">Alex Johnson</h3>
+                  <span class="job" data-translate="clientJob3">Travel Blogger</span>
+              </div>
             </div>
             <button type="button" class="rate-us" onclick="window.location.href='rating.ejs'" data-translate="rateUs">Rate Us</button>
           </div>
         </div>
         
       </section>
-
-      
     
     
-
-      
-      <section class="reward ">
-        <div class="container">
-            <div class="content">
-                <p data-translate="discountCodes">100+ discount codes</p>
-                <h4  data-translate="discoverDiscounts">Join rewards and discover amazing discounts on your booking</h4>
-                <a  id="join-us-btn"  class="my-button  animate"data-translate="joinRewards">Join Rewards</a>
-                <hr class="hr-line ">
-                <div class="reward-c">
-                    <div class="reward-h3 ">
-                        <h3  class="">7.4% </h3>
-                        <h6 class="" data-translate="propertyReturnRate"> property Return Rate</h6>
-                    </div>
-                    <div class="vl"></div>
-                    <div>
-                        <h3 class="" >3,856 </h3>
-                        <h6 class=""data-translate="propertySellRent">property in Sell and Rent</h6>
-                    </div>
-                    <div class="vl"></div>
-                    <div>
-                        <h3 class="">2,540</h3>
-                        <h6 class="" data-translate="dailyTransactions">Daily Completed Transactions</h6>
-                    </div>
-                </div>
-            </div>
+<section class="reward">
+  <div class="container">
+    <div class="content">
+      <p data-translate="discountCodes">100+ discount codes</p>
+      <h4 data-translate="discoverDiscounts">Join rewards and discover amazing discounts on your booking</h4>
+      <a id="join-us-btn" class="my-button animate" data-translate="joinRewards">Join Rewards</a>
+      <hr class="hr-line">
+      <div class="reward-c">
+        <div class="reward-h3">
+          <h3>7.4%</h3>
+          <h6 data-translate="propertyReturnRate">Property Return Rate</h6>
         </div>
-    </section>
-    <div id="message-box" class="message-box">
-            <p id="message-text"></p>
+        <div class="vl"></div>
+        <div>
+          <h3>3,856</h3>
+          <h6 data-translate="propertySellRent">Property in Sell and Rent</h6>
         </div>
-
-
-
-
-
-
-
-
-      <h1 class="heading" style="color: goldenrod;"data-translate="newLaunches">New</h1>
-      <h1 class="heading" style="color: black;" data-translate="newLaunches">LAUNCHES</h1>
-      <div class="image-container">
-       
-        <img src="./images/1.jpg" alt="Image">
-        <div class="expand-box">
-          <div class="content">
-            <img src=./images/Creative-real-estate-logo-design-Graphics-29379269-1-removebg-preview.png alt="logo">
-          </div>
-          <div class="expanded-content" >
-            <p >Jacuzzi<i class="fa-solid fa-hot-tub-person  icon" ></i><div class="vl"></div></p>
-          <p>Kids Area<i class='fas fa-shapes'></i></i><div class="vl"></div></p>
-            <br>Relaxation <i class="fa-solid fa-mug-hot"></i><div class="vl"></div></p>
-          <p>Panoramic green views<i class="fa-solid fa-tree"></i><div class="vl"></div></p> 
-          </div>
-          <div  class="buttons"  >
-          <a href="" class="my-button " style="margin: 20px;"><i class="fas fa-phone"></i>Call </a>
-          <a href="" class="my-button" style="margin: 20px;"><i class="fa-solid fa-eye"></i>View Projects </a>
-         
-          </div>
+        <div class="vl"></div>
+        <div>
+          <h3>2,540</h3>
+          <h6 data-translate="dailyTransactions">Daily Completed Transactions</h6>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<div id="message-box" class="message-box">
+  <p id="message-text"></p>
+</div>
+
+<h1 class="heading" style="color: goldenrod;" data-translate="newLaunches">New</h1>
+<h1 class="heading" style="color: black;" data-translate="newLaunches">LAUNCHES</h1>
+
+<div class="image-container">
+  <img src="./images/1.jpg" alt="Image">
+  <div class="expand-box">
+    <div class="content">
+      <img src="./images/Creative-real-estate-logo-design-Graphics-29379269-1-removebg-preview.png" alt="logo">
+    </div>
+    <div class="expanded-content">
+      <p>Jacuzzi <i class="fa-solid fa-hot-tub-person icon"></i><div class="vl"></div></p>
+      <p>Kids Area <i class='fas fa-shapes'></i><div class="vl"></div></p>
+      <br>Relaxation <i class="fa-solid fa-mug-hot"></i><div class="vl"></div></p>
+      <p>Panoramic green views <i class="fa-solid fa-tree"></i><div class="vl"></div></p>
+    </div>
+    <div class="buttons">
+      <a href="" class="my-button" style="margin: 20px;"><i class="fas fa-phone"></i>Call</a>
+      <a href="" class="my-button" style="margin: 20px;"><i class="fa-solid fa-eye"></i>View Projects</a>
+    </div>
+  </div>
+</div>
+<%- include('partials/footer', { title: title }) %>
+
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGzWk5rU2KFnpy4rA8rWRSW0lubLZL6mxO6CS3Hj75pSl" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-qH5WRyyHfXoeNyNr9t9tNXaqUPtx51yew9hDkEYLq1W0PyiRo0zTQ5V3knnLMwB1" crossorigin="anonymous"></script>
+      <script src="./js/script.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.min.js"></script>
+     <!-- <script>
       
+      document.addEventListener('DOMContentLoaded', function () {
+          const translations = {
+            en: {
+              home: "Home",
+              aboutUs: "ABOUT US",
+              communities: "COMMUNITIES",
+              newCairo: "NEW CAIRO",
+              properties: "PROPERTIES",
+              apartments: "APARTMENTS",
+              villas: "VILLAS",
+              sell: "SELL",
+              contactUs: "CONTACT US",
+              login: "LOGIN",
+              signup: "Sign up",
+              discoverProperty: "Discover Property More Easily",
+              search: "Search",
+              discoverPremium: "DISCOVER A PREMIUM",
+              lifestyle: "LIFESTYLE",
+              bedroomsLabel: "Bedrooms",
+              pricesLabel: "Prices",
+              locationsLabel: "Locations",
+              sortData: "SORT-DATA",
+              clientTitle: "What our clients say",
+              clientReview1: "The booking process was seamless, and the confirmation was instant. I highly recommend Sa&Jo for hassle-free online bookings.",
+              clientName1: "John Doe",
+              clientJob1: "CEO at Google",
+              clientReview2: "Sa&Jo offers unbeatable prices on a wide range of properties. I'm always confident that I'm getting the best value for my money.",
+              clientName2: "Jane Smith",
+              clientJob2: "Marketing Director",
+              clientReview3: "I love the flexibility of booking with Sa&Jo. Whether I need a last-minute reservation or an extended stay, they always have options that suit my needs.",
+              clientName3: "Alex Johnson",
+              clientJob3: "Travel Blogger",
+              enquiry: "ENQUIRY",
+              call: "CALL",
+              whatsapp: "WHATSAPP",
+              tour3D: "3D TOUR",
+              discountCodes: "100+ discount codes",
+              discoverDiscounts: "Join rewards and discover amazing discounts on your booking",
+              joinRewards: "Join Rewards",
+              propertyReturnRate: "Property Return Rate",
+              propertySellRent: "Property in Sell and Rent",
+              dailyTransactions: "Daily Completed Transactions",
+              newLaunches: "New LAUNCHES"
+            },
+            ar: {
+              home: "الصفحة الرئيسية",
+              aboutUs: "معلومات عنا",
+              communities: "المجتمعات",
+              newCairo: "القاهرة الجديدة",
+              properties: "العقارات",
+              apartments: "الشقق",
+              villas: "الفلل",
+              sell: "بيع",
+              contactUs: "اتصل بنا",
+              login: "تسجيل الدخول",
+              signup: "اشترك",
+              discoverProperty: "اكتشف العقارات بسهولة أكبر",
+              search: "بحث",
+              discoverPremium: "اكتشف نمط حياة مميز",
+              lifestyle: "أسلوب الحياة",
+              bedroomsLabel: "غرف النوم",
+              pricesLabel: "الأسعار",
+              locationsLabel: "المواقع",
+              sortData: "فرز البيانات",
+              clientTitle: "ماذا يقول عملاؤنا",
+              clientReview1: "كانت عملية الحجز سلسة، وتم التأكيد على الفور. أوصي بشدة بـ Sa&Jo لحجوزات عبر الإنترنت خالية من المتاعب.",
+              clientName1: "جون دو",
+              clientJob1: "الرئيس التنفيذي في جوجل",
+              clientReview2: "تقدم Sa&Jo أسعارًا لا تضاهى على مجموعة واسعة من العقارات. أنا دائمًا واثق من أنني أحصل على أفضل قيمة لأموالي.",
+              clientName2: "جين سميث",
+              clientJob2: "مدير التسويق",
+              clientReview3: "أحب مرونة الحجز مع Sa&Jo. سواء كنت بحاجة إلى حجز في اللحظة الأخيرة أو إقامة طويلة، فإن لديهم دائمًا خيارات تناسب احتياجاتي.",
+              clientName3: "أليكس جونسون",
+              clientJob3: "مدون السفر",
+              enquiry: "استفسار",
+              call: "اتصل",
+              whatsapp: "واتساب",
+              tour3D: "جولة ثلاثية الأبعاد",
+              discountCodes: "100+ رمز خصم",
+              discoverDiscounts: "انضم إلى المكافآت واكتشف خصومات مذهلة على الحجز الخاص بك",
+              joinRewards: "انضم إلى المكافآت",
+              propertyReturnRate: "معدل عائد العقارات",
+              propertySellRent: "عقار للبيع والإيجار",
+              dailyTransactions: "المعاملات المكتملة اليومية",
+              newLaunches: "إطلاقات جديدة"
+            }
+          };
+     
+        
+  const languageSwitcher = document.querySelectorAll('.dropdown-item');
 
-
-
-
-
-
-
-
-      <script src="/js/localization.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/21.6.15/i18next.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next-xhr-backend/3.2.2/i18nextXHRBackend.min.js"></script>
+  languageSwitcher.forEach(item => {
+    item.addEventListener('click', (e) => {
+      const lang = e.target.getAttribute('value');
+      document.documentElement.setAttribute('lang', lang);
+      document.documentElement.setAttribute('dir', lang === 'ar'? 'rtl' : 'ltr');
       
-      <%- include('partials/footer', { title: title }) %>
-<script src="js.js"></script>
-    </body>
-</html>
+      translateContent(lang);
+    });
+  });
+
+  function translateContent(lang) {
+    const elements = document.querySelectorAll('[data-translate]');
+    elements.forEach(element => {
+      const key = element.getAttribute('data-translate');
+      element.textContent = translations[lang][key];
+    });
+  }
+      });
+      </script>-->
+      
+  </body>
+  </html>
