@@ -32,11 +32,13 @@ function bufferToBase64(buffer) {
                 <div class="card-content">
                     <h2><%= arr[i].name %></h2>
                     <p><%= arr[i].details %></p>
-                    <a href="/AdminPage.ejs?btn=<%=i%>" class="button">Find out more <span class="material-symbols-outlined">arrow_right_alt</span></a>
+                    <a href="/Adminpage.ejs?btn=<%=i%>" class="button">Find out more <span class="material-symbols-outlined">arrow_right_alt</span></a>
                     <div id="del">
                         <div id="del-<%=i%>" style="display:flex;justify-content: space-between;">
-                            <input type="button" class="edit-button" value="edit" onclick="return edit('<%=i%>')">
-                            <input type="button" value="delete" onclick="return del('<%=i%>')">
+                            <input type="button" class="edit-button" value="edit" onclick="return show('<%=i%>')">
+                            <form action="/villas/delete/<%= arr[i]._id %>" method="POST">
+                                <input type="submit" value="Delete">
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -46,6 +48,19 @@ function bufferToBase64(buffer) {
     </main>
     <div style="display:grid;justify-content:center;"><button style="background-color:white; border: none;" type="button" onclick="return dis()"><i class="fa fa-plus" style="font-size:48px;color:green"></i></button></div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <div id="admin-prop-add">
     <form id="admin-prop-myform" Name="AdminVillas" action="/villas" method="post" enctype="multipart/form-data">
@@ -96,6 +111,64 @@ function bufferToBase64(buffer) {
         <input type="submit" value="add" onclick="return validateForm()">
     </form>
 </div>
+
+
+
+<div id="admin-prop-edit">
+<%for(let i=0;i<arr.length;i++){%>
+<form class="edithiddenforms" id="form<%=i%>" action="/villas/edit/<%= arr[i]._id %>" method="POST" enctype="multipart/form-data">
+    <div class="input-container">
+        Images:<input id="admin-prop-formimg<%=i%>" name="image" type="file" accept="image/*">
+        <h5 id="img-err<%=i%>" class="errormsgs"></h5>
+    </div>
+    <div class="form-section">
+        <div class="input-container">
+            Name:<input id="admin-prop-formname<%=i%>" name="name" type="text">
+            <h5 id="name-err<%=i%>" class="errormsgs"></h5>
+        </div>
+        <div class="input-container">
+            Details:<textarea id="admin-prop-formdetails<%=i%>" name="details" cols="20" row="4" placeholder="details"></textarea>
+            <h5 id="details-err<%=i%>" class="errormsgs"></h5>
+        </div>
+    </div>
+    <div class="form-section">
+        <div class="input-container">
+            Beds:<input id="admin-prop-formbeds<%=i%>" name="beds" type="number" min="0" step="1">
+            <h5 id="beds-err<%=i%>" class="errormsgs"></h5>
+        </div>
+        <div class="input-container">
+            Livingrooms:<input id="admin-prop-formlivingrooms<%=i%>" name="livingrooms" type="number" min="0" step="1">
+            <h5 id="livingrooms-err<%=i%>" class="errormsgs"></h5>
+        </div>
+    </div>
+    <div class="form-section">
+        <div class="input-container">
+            Toilets:<input id="admin-prop-formtoilets<%=i%>" name="toilets" type="number" min="0" step="1">
+            <h5 id="toilets-err<%=i%>" class="errormsgs"></h5>
+        </div>
+        <div class="input-container">
+            Garden:<input id="admin-prop-formgarden<%=i%>" name="garden" type="number" min="0" step="1">
+            <h5 id="garden-err<%=i%>" class="errormsgs"></h5>
+        </div>
+    </div>
+    <div class="form-section">
+        <div class="input-container">
+            Swimmingpools:<input id="admin-prop-formswimmingpools<%=i%>" name="swimmingpools" type="number" min="0" step="1">
+            <h5 id="swimmingpools-err<%=i%>" class="errormsgs"></h5>
+        </div>
+        <div class="input-container">
+            Price:<input id="admin-prop-formprice<%=i%>" name="price" type="number" min="0" step="1">
+            <h5 id="price-err<%=i%>" class="errormsgs"></h5>
+        </div>
+    </div>
+    <input type="submit" value="edit" onclick="return validateForm2('<%=i%>')">
+</form>
+<%}%>
+</div>
+
+
+
+
 <button id="adminvillasbackbtn" onclick="return backfromform()"><i class="fas fa-arrow-left"></i></button>
 <button style="display:grid;position:absolute;top:0;right:0;" onclick="window.location.href = './Dashboard2.ejs'">Back to Dashboard<i class="fas fa-arrow-left"></i></button>
 
