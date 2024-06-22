@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers</title>
+    <link rel="stylesheet" href="./css/adcss.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a class="navbar-brand" href="/views/Dashboard2.ejs">
+                        <img src="/images/download.png" alt="logo">
+                    </a>
+                </li>
+                <li>
+                    <a href="/Dashboard2.ejs">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/orders.ejs">
+                        <span class="icon">
+                            <ion-icon name="cart-outline"></ion-icon>
+                        </span>
+                        <span class="title">Orders</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/schaduled.ejs">
+                        <span class="icon">
+                            <ion-icon name="watch-outline"></ion-icon>
+                        </span>
+                        <span class="title">Scheduled</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/customers.ejs">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">Customers</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/AdminApartments.ejs">
+                        <span class="icon">
+                            <ion-icon name="list-outline"></ion-icon>
+                        </span>
+                        <span class="title">Products</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/sellRequests">
+                        <span class="icon">
+                            <ion-icon name="paper-plane-outline"></ion-icon>
+                        </span>
+                        <span class="title">Sell Requests</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/clientFeedback.ejs">
+                        <span class="icon">
+                            <ion-icon name="document-outline"></ion-icon>
+                        </span>
+                        <span class="title">Client's Feedbacks</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="briefcase-outline"></ion-icon>
+                        </span>
+                        <span class="title">Agents</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Mainindex.ejs">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+    
+                <div class="logoo">
+                    <img src="/images/download.png" alt="logo">
+                </div>
+    
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+            </div>
+    
+            <!-- ======================= Cards ================== -->
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers">1,504</div>
+                        <div class="cardName">Daily Views</div>
+                    </div>
+    
+                    <div class="iconBx">
+                        <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                </div>
+    
+                <div class="card">
+                    <div>
+                        <div class="numbers">80</div>
+                        <div class="cardName">Sales</div>
+                    </div>
+    
+                    <div class="iconBx">
+                        <ion-icon name="cart-outline"></ion-icon>
+                    </div>
+                </div>
+    
+                <div class="card">
+                    <div>
+                        <div class="numbers">284</div>
+                        <div class="cardName">Comments</div>
+                    </div>
+    
+                    <div class="iconBx">
+                        <ion-icon name="chatbubbles-outline"></ion-icon>
+                    </div>
+                </div>
+    
+                <div class="card">
+                    <div>
+                        <div class="numbers">$7,842</div>
+                        <div class="cardName">Earning</div>
+                    </div>
+    
+                    <div class="iconBx">
+                        <ion-icon name="cash-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
+  <!-- ================ customers Details List ================= -->
+
+                <div class="details">
+                    <div class="recentOrders">
+                        <div class="cardHeader">
+                            <h2>Agents</h2>
+                        </div>
+    
+                        <table class="tabled">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Phone</td>
+                                    <td>Location</td>  
+                                </tr>
+                            </thead>
+    
+                            <tbody>
+                                <tr>
+                                    <td>Ahmed Ali</td>
+                                    <td><a href="#">010 234 567 843</a></td>
+                                    <td>Cairo</td>
+                                    
+                                </tr>
+    
+                                <tr>
+                                    <td>Mona Hassan</td>
+                                    <td><a href="#">010 234 567 843</a></td>
+                                    <td>Cairo</td>
+                                   
+                                </tr>
+    
+                                <tr>
+                                    <td>Hassan Ibrahim</td>
+                                    <td><a href="#">010 234 567 843</a></td>
+                                    <td>Alexandria</td>
+                                  
+                                </tr>
+    
+                                <tr>
+                                    <td>Laila Saeed</td>
+                                    <td><a href="#">010 234 567 843</a></td>
+                                    <td>Giza</td>
+                                   
+                                </tr>
+
+                                <tr>
+                                    <td>Nadia Youssef</td>
+                                    <td><a href="#">010 234 567 843</a></td>
+                                    <td>Luxor</td>
+                                   
+                                </tr>
+
+                                <tr>
+                                    <td>Omar Farouk</td>
+                                    <td><a href="#">010 234 567 843</a></td>
+                                    <td>Aswan</td>
+                                   
+                                </tr>
+
+                                <tr>
+                                    <td>Fatma Adel</td>
+                                    <td><a href="#">010 234 567 843</a></td>
+                                    <td>Giza</td>
+                                   
+                                </tr>
+
+                                <tr>
+                                    <td>Mohamed Salah</td>
+                                    <td><a href="#">010 234 567 843</a></td>
+                                    <td>Cairo</td>
+                                   
+                                </tr>
+                                <tr>
+                                    <td>Sara Mostafa</td>
+                                    <td><a href="#">010 234 567 843</a></td>
+                                    <td>Alexandria</td>
+                                   
+                                </tr>
+                                <tr>
+                                    <td>Khaled Hussein</td>
+                                    <td><a href="#">010 234 567 843</a></td>
+                                    <td>Luxor</td>
+                                   
+                                </tr>
+    
+                            </tbody>
+                           
+                              
+                            
+                        </table> 
+                        <div class="button-container">
+                            <a  class="button" onclick="openModal('addOrderModal')">Add Agent</a>
+                            <a class="button" onclick="openModal('editRemoveOrderModal')">Edit Agent</a>
+                            <a class="button" onclick="openModal('editRemoveOrderModal')">Remove Agent</a>
+                        </div>
+                        
+                    </div>
+    
+    
+                    
+    <div id="add-form" style="display: none;"> <!--displat:block after clicking on the button-->
+        <h2>Add customer</h2>
+        <form>
+          <label for="name">Name:</label><br>
+          <input type="text" id="name" name="name"><br>
+          <label for="email-add">E-mail:</label><br>
+          <input type="email" id="email-add" name="email"><br>
+          <label for="address-add">Address:</label><br>
+          <input type="text" id="address-add" name="address"><br>
+          <button type="submit" class="button">Add</button>
+        </form>
+      </div>
+      
+      <div id="edit-form" style="display: none;">
+        <h2>Edit customer</h2>
+        <form>
+          <label for="name">Name:</label><br>
+          <input type="text" id="name" name="name"><br>
+          <label for="email">E-mail:</label><br>
+          <input type="email" id="email" name="email"><br>
+          <label for="address">Address:</label><br>
+          <input type="text" id="address" name="address"><br>
+          
+          <button type="submit" class="button">Save Changes</button>
+        </form>
+      </div>
+    
+        <!-- =========== Scripts =========  -->
+        <script src="/js/main.js"></script>
+    
+                <!-- ====== ionicons ======= -->
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+    
+</body>
+</html>

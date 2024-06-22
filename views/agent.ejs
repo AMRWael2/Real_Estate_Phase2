@@ -13,74 +13,69 @@
 </head>
 <body>
     <%- include('partials/header', { title: title }) %>
-
-    <section id="background">
-        <div class="title">
-            <h1>A great agent makes all the difference</h1>
-        </div>
-    </section>
-    <section class="sec1">
-        <h1>Find an Agent</h1>
-        <div class="search-box">
-            <div class="first">
-                <label>LOCATION</label>
-                <div class="location-search">
-                    <input type="text" placeholder="City">
-                    <label for="search1">
-                        <button type="submit" id="search1">Search</button>
-                    </label>
+        <section id="background">
+            <div class="title">
+                <h1>A great agent makes all the difference</h1>
+            </div>
+        </section>
+        <section class="sec1">
+            <h1>Find an Agent</h1>
+            <div class="search-box">
+                <div class="first">
+                    <label>LOCATION</label>
+                    <p>Enter the location of the home you want to sell</p>
+                    <div class="location-search">
+                        <input type="text" placeholder="City" id="city-input"> 
+                    </div>
                 </div>
             </div>
-            <div class="second">
-                <label for="agent-name">NAME</label>
-                <div data-testid="name-search">
-                    <input type="text" placeholder="Agent Name" id="agent-name">
-                    <label for="search2">
-                        <button type="submit" id="search2">Search</button>
-                    </label>
-                </div>
-            </div>
+            <div class="search-box1">
+            <button type="button" onclick="searchAgents()">Search</button> 
         </div>
-    </section>
-    <%- include('partials/footer', { title: title }) %>
-    <script>
-       const apiUrl = 'https://test.api.amadeus.com/v1/reference-data/locations';
-        const apiKey = 'zSnT78HaU5vAEd1YSM5uAv8S1hVNfppr';
 
-        async function searchCities(searchQuery) {
-        try {
-            const headers = {
-            'Authorization': `Bearer ${apiKey}`,
-            'Content-Type': 'application/json'
-            };
-            const response = await axios.get(`${apiUrl}`, {
-            headers: headers,
-            params: {
-                subType: 'CITY',
-                keyword: searchQuery
+        </section>
+        
+        <section class="agent-list">
+            <h2>Agents</h2>
+            <ul id="agent-list"></ul>
+        </section>
+    
+        <script>
+            const cities = ["Cairo", "Alexandria", "Giza", "Luxor", "Aswan", "Nasr City", "Benha", "6 October"];
+            const agents = [
+                { name: "Ahmed Ali", phone: "010 234 567 843", city: "Cairo" },
+                { name: "Mona Hassan", phone: "010 234 567 843", city: "Cairo" },
+                { name: "Hassan Ibrahim", phone: "010 234 567 843", city: "Alexandria" },
+                { name: "Laila Saeed", phone: "010 234 567 843", city: "Giza" },
+                { name: "Nadia Youssef", phone: "010 234 567 843", city: "Luxor" },
+                { name: "Omar Farouk", phone: "010 234 567 843", city: "Aswan" },
+                { name: "Fatma Adel", phone: "010 234 567 843", city: "Giza" },
+                { name: "Mohamed Salah", phone: "010 234 567 843", city: "Cairo" },
+                { name: "Sara Mostafa", phone: "010 234 567 843", city: "Alexandria" },
+                { name: "Khaled Hussein", phone: "010 234 567 843", city: "Luxor" }
+            ];
+    
+            function searchAgents() {
+                const cityInput = document.getElementById('city-input').value.toLowerCase();
+    
+                const filteredAgents = agents.filter(agent => agent.city.toLowerCase().includes(cityInput));
+    
+                const agentList = document.getElementById('agent-list');
+                agentList.innerHTML = '';
+    
+                if (filteredAgents.length > 0) {
+                    filteredAgents.forEach(agent => {
+                        const agentItem = document.createElement('li');
+                        agentItem.textContent = `Agent: ${agent.name}, Phone: ${agent.phone}, City: ${agent.city}`;
+                        agentList.appendChild(agentItem);
+                    });
+                } else {
+                    agentList.innerHTML = '<li>No agents found</li>';
+                }
             }
-            });
-            const cityData = response.data.data;
-            console.log(cityData);
-            
-            const cityList = document.getElementById('search1');
-            cityList.innerHTML = '';
-            cityData.forEach((city) => {
-            const cityItem = document.createElement('li');
-            cityItem.textContent = city.address.label;
-            cityList.appendChild(cityItem);
-            });
-        } catch (error) {
-            console.error(error);
-        }
-        }
+        </script>
+    
+        <%- include('partials/footer', { title: title }) %>
 
-        // Add an event listener to the search input field
-        const searchInput = document.getElementById('search-input');
-        searchInput.addEventListener('input', (e) => {
-        const searchQuery = e.target.value;
-        searchCities(searchQuery);
-        });
-    </script>
 </body>
 </html>
