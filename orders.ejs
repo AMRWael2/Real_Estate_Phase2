@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Admin Dashboard | Korsat X Parmaga</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="./css/adcss.css">
+</head>
+<body>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li><a class="navbar-brand" href="#"><img src="/images/download.png" alt="logo"></a></li>
+                <li><a href="Dashboard2.ejs"><span class="icon"><ion-icon name="home-outline"></ion-icon></span><span class="title">Dashboard</span></a></li>
+                <li><a href="orders.ejs"><span class="icon"><ion-icon name="cart-outline"></ion-icon></span><span class="title">Orders</span></a></li>
+                <li><a href="schaduled.ejs"><span class="icon"><ion-icon name="Watch"></ion-icon></span><span class="title">scheduled</span></a></li>
+                <li><a href="customers.ejs"><span class="icon"><ion-icon name="people-outline"></ion-icon></span><span class="title">Customers</span></a></li>
+                <li><a href="AdminVillas.ejs"><span class="icon"><ion-icon name="List"></ion-icon></span><span class="title">Products</span></a></li>
+                <li><a href="#"><span class="icon"><ion-icon name="settings-outline"></ion-icon></span><span class="title">Settings</span></a></li>
+                <li><a href="Mainindex.ejs"><span class="icon"><ion-icon name="log-out-outline"></ion-icon></span><span class="title">Sign Out</span></a></li>
+            </ul>
+        </div>
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle"><ion-icon name="menu-outline"></ion-icon></div>
+                <div class="logoo"><img src="/images/download.png" alt=""></div>
+                <div class="search"><label><input type="text" placeholder="Search here"><ion-icon name="search-outline"></ion-icon></label></div>
+            </div>
+            <!-- ======================= Cards ================== -->
+            <div class="cardBox">
+                <div class="card"><div><div class="numbers">1,504</div><div class="cardName">Daily Views</div></div><div class="iconBx"><ion-icon name="eye-outline"></ion-icon></div></div>
+                <div class="card"><div><div class="numbers">80</div><div class="cardName">Sales</div></div><div class="iconBx"><ion-icon name="cart-outline"></ion-icon></div></div>
+                <div class="card"><div><div class="numbers">284</div><div class="cardName">Comments</div></div><div class="iconBx"><ion-icon name="chatbubbles-outline"></ion-icon></div></div>
+                <div class="card"><div><div class="numbers">$7,842</div><div class="cardName">Earning</div></div><div class="iconBx"><ion-icon name="cash-outline"></ion-icon></div></div>
+            </div>
+            <!-- ================ Order Details List ================= -->
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Orders</h2>
+                        <a href="#" class="btn" id="addBtn">Add Order</a>
+                    </div>
+                    <table class="tabled">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>Telephone</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orderTable">
+                            <% array.forEach((order) => { %>
+                            <tr>
+                                <td><%= order.name %></td>
+                                <td><%= order.address %></td>
+                                <td><%= order.telephone %></td>
+                                <td>
+                                    <button onclick="editOrder('<%= order._id %>', '<%= order.name %>', '<%= order.address %>', '<%= order.telephone %>')">Edit</button>
+                                    <button onclick="removeOrder('<%= order._id %>')">Delete</button>
+                                </td>
+                                
+                            </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                  
+   <!-- Edit Order Form -->
+<div id="editForm" style="display: none;">
+    <form action="/editOrder" method="post" id="editOrderForm">
+        <input type="hidden" id="edit-id" name="id">
+        <label for="edit-name">Name:</label>
+        <input type="text" id="edit-name" name="name" required><br>
+        <label for="edit-address">Address:</label>
+        <input type="text" id="edit-address" name="address" required><br>
+        <label for="edit-telephone">Telephone:</label>
+        <input type="text" id="edit-telephone" name="telephone" required><br>
+        <button type="submit">Save Changes</button>
+    </form>
+</div>
+
+<!-- Add Order Form -->
+<div id="addForm" style="display: none;">
+    <form action="/addOrder" method="post" id="addOrderForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required><br>
+        <label for="telephone">Telephone:</label>
+        <input type="text" id="telephone" name="telephone" required><br>
+        <button type="submit">Add Order</button>
+    </form>
+</div>
+
+
+<script>
+    document.getElementById('addBtn').addEventListener('click', function() {
+        document.getElementById('addForm').style.display = 'block';
+        document.getElementById('editForm').style.display = 'none';
+    });
+
+    function editOrder(id, name, address, telephone) {
+        document.getElementById('edit-id').value = id;
+        document.getElementById('edit-name').value = name;
+        document.getElementById('edit-address').value = address;
+        document.getElementById('edit-telephone').value = telephone;
+        document.getElementById('editForm').style.display = 'block';
+        document.getElementById('addForm').style.display = 'none';
+    }
+    
+
+    function removeOrder(id) {
+    fetch('/removeOrder', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ id }),
+    })
+    .then(response => {
+        if (response.ok) {
+            location.reload(); // Reload the page after successful deletion
+        } else {
+            console.error('Error deleting order');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+
+
+
+    
+    }
+
+</script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
