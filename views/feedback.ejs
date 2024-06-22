@@ -9,8 +9,9 @@
 <body class="feedbackpage">
     <div class="container">
         <h2>Your feedback helps us to improve. Thank you for sharing.</h2>
+     <form action="/submit-feedback" method="post" name="feedbackForm">
         <p class="title">I am a...</p>
-        <select id="typeSelect" required>
+        <select id="typeSelect" name="type" required>
             <option>Select an option...</option>
             <option>Buyer</option>
             <option>Seller</option>
@@ -33,7 +34,7 @@
         <input type="text" name="name" id="name" placeholder="Enter your name">
 
         <p class="title">What is your feedback about?</p>
-        <select id="feedbackType" required>
+        <select id="feedbackType" name="feedbackType" required>
             <option>Select an option...</option>
             <option>Property</option>
             <option>Rental Property</option>
@@ -54,6 +55,7 @@
         <p class="below" id="commentBelow">This field cannot be left blank.</p>
         <button class="btn" id="feedbackbtn">Share feedback</button>
     </div>
+</form>
 
     <div class="container" id="feedbackMessage" style="display: none;">
         <h2>Thank you for your feedback!</h2>
