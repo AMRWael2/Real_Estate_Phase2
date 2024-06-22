@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Rewards</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="./css/adcss.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li><a class="navbar-brand" href="/views/Dashboard2.ejs"><img src="/images/download.png" alt="logo"></a></li>
+                <li><a href="/Dashboard2.ejs"><span class="icon"><ion-icon name="home-outline"></ion-icon></span><span class="title">Dashboard</span></a></li>
+                <li><a href="/orders.ejs"><span class="icon"><ion-icon name="cart-outline"></ion-icon></span><span class="title">Orders</span></a></li>
+                <li><a href="/schaduled.ejs"><span class="icon"><ion-icon name="watch-outline"></ion-icon></span><span class="title">Scheduled</span></a></li>
+                <li><a href="/Rewardadmin.ejs"><span class="icon"><ion-icon name="watch-outline"></ion-icon></span><span class="title">Join-Reward</span></a></li>
+                <li><a href="/customers.ejs"><span class="icon"><ion-icon name="people-outline"></ion-icon></span><span class="title">Customers</span></a></li>
+                <li><a href="/AdminApartments.ejs"><span class="icon"><ion-icon name="list-outline"></ion-icon></span><span class="title">Products</span></a></li>
+                <li><a href="/sellRequests.ejs"><span class="icon"><ion-icon name="paper-plane-outline"></ion-icon></span><span class="title">Sell Requests</span></a></li>
+                <li><a href="/clientFeedback.ejs"><span class="icon"><ion-icon name="document-outline"></ion-icon></span><span class="title">Client's Feedbacks</span></a></li>
+                <li><a href="/adminAgents.ejs"><span class="icon"><ion-icon name="briefcase-outline"></ion-icon></span><span class="title">Agents</span></a></li>
+                <li><a href="/index.ejs"><span class="icon"><ion-icon name="log-out-outline"></ion-icon></span><span class="title">Sign Out</span></a></li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle"><ion-icon name="menu-outline"></ion-icon></div>
+                <div class="logoo"><img src="/images/download.png" alt=""></div>
+                <div class="search"><label><input type="text" placeholder="Search here"><ion-icon name="search-outline"></ion-icon></label></div>
+            </div>
+            
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Rewards</h2>
+                        <a href="#" class="btn" id="addBtn">Add Reward</a>
+                    </div>
+                    <table class="tabled">
+                        <thead>
+                            <tr>
+                            
+                                <th>User Name</th>
+                                <th>Email</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rewardTable">
+                            <% rr.forEach((rew) => { %>
+                            <tr>
+                            
+                                <td><%= rew.username %></td>
+                                <td><%= rew.email %></td>
+                                <td>
+                                    <button class="o" onclick="editReward('<%= rew._id %>', '<%= rew.userId %>', '<%= rew.username %>', '<%= rew.email %>')">Edit</button>
+                                    <form action="/removeReward/<%= rew._id %>" method="post" id="removeReward">  
+                                        <button onclick="removeReward('<%= rew._id %>')" type="submit">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="editForm" style="display: none;" class="o">
+                    <form action="/editReward" method="post" id="editRewardForm">
+                        <input type="hidden" id="edit-id" name="id">
+                        <label for="edit-userId">User ID:</label>
+                        <input type="text" id="edit-userId" name="userId" required><br>
+                        <label for="edit-username">Username:</label>
+                        <input type="text" id="edit-username" name="username" required><br>
+                        <label for="edit-email">Email:</label>
+                        <input type="text" id="edit-email" name="email" required><br>
+                        <button type="submit">Save Changes</button>
+                    </form>
+                </div>
+
+                <div id="addForm" style="display: none;" class="o">
+                    <form action="/addReward" method="post" id="addRewardForm">
+                        <label for="userId">User ID:</label>
+                        <input type="text" id="userId" name="userId" required><br>
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required><br>
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" name="email" required><br>
+                        <button type="submit">Add Reward</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('addBtn').addEventListener('click', function() {
+            document.getElementById('addForm').style.display = 'block';
+            document.getElementById('editForm').style.display = 'none';
+        });
+
+        function editReward(id, userId, username, email) {
+            document.getElementById('edit-id').value = id;
+            document.getElementById('edit-userId').value = userId;
+            document.getElementById('edit-username').value = username;
+            document.getElementById('edit-email').value = email;
+            document.getElementById('editForm').style.display = 'block';
+            document.getElementById('addForm').style.display = 'none';
+        }
+        
+        function removeReward(id) {
+            fetch('/removeReward', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ id }),
+            })
+            .then(response => {
+                if (response.ok) {
+                    location.reload(); // Reload the page after successful deletion
+                } else {
+                    console.error('Error deleting reward');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
