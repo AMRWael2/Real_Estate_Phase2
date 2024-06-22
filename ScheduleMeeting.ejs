@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule Meeting</title>
+  <link rel="stylesheet" href="/css/Schedule Meeting.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="left-section">
+      <h2>Fill in Your Details & Get VIP Access to the Latest Market Updates</h2>
+      <p>Join our exclusive members to get the latest updates about Dubai's real estate market and be the first to know about all the new launches</p>
+      <div class="contact-info">
+        <img src="/images/consultant.jpg" alt="Consultant">
+        <p>Call one of our consultants for assistance</p>
+        <p>+971 50 539 0249</p>
+      </div>
+    </div>
+    <div class="right-section">
+      <form action="/" method="POST" id="meetingForm">
+        <label for="phoneNumber">Phone Number</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" required>
+        <span id="phoneNumberError" class="error"></span>
+    
+        <label for="meetingDate">Preferred Meeting Date</label>
+        <input type="date" id="meetingDate" name="meetingDate" required>
+        <span id="meetingDateError" class="error"></span>
+    
+        <label for="meetingTime">Preferred Meeting Time</label>
+        <input type="time" id="meetingTime" name="meetingTime" required>
+        <span id="meetingTimeError" class="error"></span>
+    
+        <span id="messageError" class="error"></span>
+    
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const meetingForm = document.getElementById('meetingForm');
+      const phoneNumberInput = document.getElementById('phoneNumber');
+      const meetingDateInput = document.getElementById('meetingDate');
+      const meetingTimeInput = document.getElementById('meetingTime');
+      const phoneNumberError = document.getElementById('phoneNumberError');
+      const meetingDateError = document.getElementById('meetingDateError');
+      const meetingTimeError = document.getElementById('meetingTimeError');
+      
+      meetingForm.addEventListener('submit', (e) => {
+        let isValid = true;
+        
+        // Validate phone number
+        const phoneNumber = phoneNumberInput.value.trim();
+        if (phoneNumber < 0 || isNaN(phoneNumber)) {
+          phoneNumberError.textContent = 'Invalid phone number';
+          phoneNumberError.style.display = 'block';
+          isValid = false;
+        } else {
+          phoneNumberError.textContent = '';
+          phoneNumberError.style.display = 'none';
+        }
+
+        // Validate meeting date
+        const meetingDate = new Date(meetingDateInput.value);
+        const today = new Date();
+        if (meetingDate <= today) {
+          meetingDateError.textContent = 'Meeting date must be in the future';
+          meetingDateError.style.display = 'block';
+          isValid = false;
+        } else {
+          meetingDateError.textContent = '';
+          meetingDateError.style.display = 'none';
+        }
+
+        // Validate meeting time (optional)
+        // You can add more validation here if needed
+
+        if (!isValid) {
+          e.preventDefault(); // Prevent form submission if there are validation errors
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
